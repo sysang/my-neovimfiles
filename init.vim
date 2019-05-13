@@ -12,7 +12,13 @@ set list
 set nowrap
 syntax on
 
+"set foldmethod=manual nofoldenable
+set foldmethod=indent
+set foldlevelstart=1
+set foldnestmax=3
+
 nnoremap K <nop>
+nnoremap t <nop>
 nnoremap <C-j> <nop>
 inoremap <C-j> <nop>
 nnoremap <C-k> <nop>
@@ -52,6 +58,9 @@ nnoremap <C-left> z10l
 nnoremap <C-right> z10h
 
 nnoremap <leader>w :cd C:\Users\dsysang\workspace<cr>:NERDTree <cr>
+
+nnoremap tt gt
+nnoremap tn :tabnew<cr>
 
 " save automatically when text is changed
 set updatetime=400
@@ -93,22 +102,22 @@ let g:NERDTreeStatusline="\ %-28{matchstr(getline('.'), '\\(\\s\\)\\?\\zs\\(\\/\
 let g:NERDTreeWinSize=40
 
 if filereadable('mix.exs')
-    call add(g:NERDTreeIgnore, '_build')
+  call add(g:NERDTreeIgnore, '_build')
 end
 
 aug user:autocmd:nerdtree
-    au!
-    au CursorMoved *NERD_tree*
-                \ let s:NERDTreeCurrentLine=line('.')
-    au BufEnter *NERD_tree*
-                \ if exists('s:NERDTreeCurrentLine') && s:NERDTreeCurrentLine > 0 |
-                \   call setpos('.', [0, s:NERDTreeCurrentLine, 1, 0]) |
-                \ end
-    au BufDelete,BufWipeout *NERD_tree*
-                \ if exists('g:nerdtree_current_buffer') |
-                \   unlet g:nerdtree_current_buffer |
-                \ end
-    au Filetype nerdtree setlocal nolist
+  au!
+  au CursorMoved *NERD_tree*
+              \ let s:NERDTreeCurrentLine=line('.')
+  au BufEnter *NERD_tree*
+              \ if exists('s:NERDTreeCurrentLine') && s:NERDTreeCurrentLine > 0 |
+              \   call setpos('.', [0, s:NERDTreeCurrentLine, 1, 0]) |
+              \ end
+  au BufDelete,BufWipeout *NERD_tree*
+              \ if exists('g:nerdtree_current_buffer') |
+              \   unlet g:nerdtree_current_buffer |
+              \ end
+  au Filetype nerdtree setlocal nolist
 aug END
 
 nnoremap <silent> <c-j> :FZF --tiebreak=begin,length,index<cr>
@@ -116,21 +125,19 @@ nnoremap <silent> <c-k> :Buffers<cr>
 nnoremap <silent> <c-n> :BLines<cr>
 
 " terminal settings
-  let g:neoterm_automap_keys = '<leader>tm'
-  let g:neoterm_use_relative_path = 1
-  let g:neoterm_autoscroll = 1
-  let g:neoterm_always_open_to_exec = 0
-  autocmd TermOpen * startinsert
-  
-  nnoremap <leader>te :te C:\cygwin64\bin\bash.exe<cr>
-  nnoremap <leader>ts :te mysql.exe -h 127.0.0.1 -P 13306 -uadmin -p'admin' -D developer_platform<cr>
-  
+let g:neoterm_automap_keys = '<leader>tm'
+let g:neoterm_use_relative_path = 1
+let g:neoterm_autoscroll = 1
+let g:neoterm_always_open_to_exec = 0
+
+nnoremap <leader>te :te "C:\Program Files\PowerShell\6\pwsh.exe"<cr>
+
 " NeoSolarized settings
- colorscheme NeoSolarized
- set background=dark
- set synmaxcol=300
- 
- " default value is "normal", Setting this option to "high" or "low" does use the 
+colorscheme NeoSolarized
+set background=dark
+set synmaxcol=300
+
+" default value is "normal", Setting this option to "high" or "low" does use the 
 " same Solarized palette but simply shifts some values up or down in order to 
 " expand or compress the tonal range displayed.
 let g:neosolarized_contrast = "high"
@@ -151,23 +158,23 @@ let g:neosolarized_underline = 1
 let g:neosolarized_italic = 0
 
 if has("autocmd")
-  " Drupal *.module and *.install files.
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.theme set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd BufRead,BufNewFile *.profile set filetype=php
-    autocmd BufRead,BufNewFile *.view set filetype=php
-  augroup END
+" Drupal *.module and *.install files.
+augroup module
+  autocmd BufRead,BufNewFile *.module set filetype=php
+  autocmd BufRead,BufNewFile *.theme set filetype=php
+  autocmd BufRead,BufNewFile *.install set filetype=php
+  autocmd BufRead,BufNewFile *.test set filetype=php
+  autocmd BufRead,BufNewFile *.inc set filetype=php
+  autocmd BufRead,BufNewFile *.profile set filetype=php
+  autocmd BufRead,BufNewFile *.view set filetype=php
+augroup END
 endif
 
 
 " The Silver Searcher
 if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+" Use ag over grep
+set grepprg=ag\ --nogroup\ --nocolor
 endif
 
 " Plugin key-mappings.
@@ -187,5 +194,5 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 " For conceal markers.
 if has('conceal')
-  set conceallevel=2 concealcursor=niv
+set conceallevel=2 concealcursor=niv
 endif
