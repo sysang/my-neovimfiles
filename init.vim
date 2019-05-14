@@ -1,5 +1,7 @@
 " START
 
+set spelllang=en_us
+set spell
 set relativenumber number numberwidth=3
 set termguicolors
 let g:mapleader=' '
@@ -82,8 +84,17 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
 Plug 'shawncplus/phpcomplete.vim'
-
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'evidens/vim-twig'
+Plug 'othree/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'leafgarland/typescript-vim'
+
+Plug 'bling/vim-airline'
+Plug 'yggdroot/indentline'
+
+Plug 'tpope/vim-fugitive'
 
 " Initialize plugin system
 call plug#end()
