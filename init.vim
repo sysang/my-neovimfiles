@@ -12,6 +12,9 @@ set tags=phptags,jstags
 set ff=unix
 set list
 set nowrap
+set backupdir=~\.vim\backup
+set undodir=~\.vim\tmp
+set directory=~\.vim\swp,~\.vim\backup\,~\.vim\tmp
 syntax on
 
 "set foldmethod=manual nofoldenable
@@ -91,7 +94,6 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'leafgarland/typescript-vim'
 
-Plug 'bling/vim-airline'
 Plug 'yggdroot/indentline'
 
 Plug 'tpope/vim-fugitive'
@@ -141,7 +143,7 @@ let g:neoterm_use_relative_path = 1
 let g:neoterm_autoscroll = 1
 let g:neoterm_always_open_to_exec = 0
 
-nnoremap <leader>te :te "C:\Program Files\PowerShell\6\pwsh.exe"<cr>
+nnoremap te :te "C:\Program Files\PowerShell\6\pwsh.exe"<cr>
 
 " NeoSolarized settings
 colorscheme NeoSolarized
