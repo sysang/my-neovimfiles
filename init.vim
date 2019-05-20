@@ -12,15 +12,17 @@ set tags=phptags,jstags
 set ff=unix
 set list
 set nowrap
-set backupdir=~\.vim\backup
-set undodir=~\.vim\tmp
-set directory=~\.vim\swp,~\.vim\backup\,~\.vim\tmp
+set backupdir=~/.vim/backup
+set undodir=~/.vim/undo
+set directory=~/.vim/swp
 syntax on
 
 "set foldmethod=manual nofoldenable
 set foldmethod=indent
 set foldlevelstart=1
 set foldnestmax=3
+
+let g:vim_json_syntax_conceal = 0
 
 nnoremap K <nop>
 nnoremap t <nop>
@@ -93,6 +95,7 @@ Plug 'evidens/vim-twig'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'leafgarland/typescript-vim'
+Plug 'elzr/vim-json'
 
 Plug 'yggdroot/indentline'
 
