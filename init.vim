@@ -17,6 +17,12 @@ set undodir=~\.vim\tmp
 set directory=~\.vim\swp,~\.vim\backup\,~\.vim\tmp
 syntax on
 
+"https://stackoverflow.com/questions/15962421/how-can-i-disable-scratch-preview-window
+set completeopt-=preview
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags .
+
 "set foldmethod=manual nofoldenable
 set foldmethod=indent
 set foldlevelstart=1
@@ -98,6 +104,8 @@ Plug 'yggdroot/indentline'
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'skywind3000/asyncrun.vim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -143,7 +151,7 @@ let g:neoterm_use_relative_path = 1
 let g:neoterm_autoscroll = 1
 let g:neoterm_always_open_to_exec = 0
 
-nnoremap te :te "C:\Program Files\PowerShell\6\pwsh.exe"<cr>
+nnoremap te :te "C:\Program Files\PowerShell\7-preview\pwsh.exe"<cr>
 
 " NeoSolarized settings
 colorscheme NeoSolarized
@@ -209,3 +217,21 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
 set conceallevel=2 concealcursor=niv
 endif
+
+" NEOVIM TERMINAL MODE
+let g:terminal_color_0 = "#445660"
+let g:terminal_color_1 = "#DF8C8C"
+let g:terminal_color_2 = "#A8CE93"
+let g:terminal_color_3 = "#DADA93"
+let g:terminal_color_4 = "#83AFE5"
+let g:terminal_color_5 = "#9A93E1"
+let g:terminal_color_6 = "#7FC1CA"
+let g:terminal_color_7 = "#C5D4DD"
+let g:terminal_color_8 = "#899BA6"
+let g:terminal_color_9 = "#F2C38F"
+let g:terminal_color_10 = "#A8CE93"
+let g:terminal_color_11 = "#DADA93"
+let g:terminal_color_12 = "#83AFE5"
+let g:terminal_color_13 = "#D18EC2"
+let g:terminal_color_14 = "#7FC1CA"
+let g:terminal_color_15 = "#E6EEF3"
