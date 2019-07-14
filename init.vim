@@ -8,7 +8,7 @@ let g:mapleader=' '
 set iskeyword+=-
 set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab shiftround
-set tags=phptags,jstags
+set tags=phptags,jstags,pytags
 set ff=unix
 set list
 set nowrap
@@ -29,7 +29,8 @@ set foldnestmax=3
 
 let g:vim_json_syntax_conceal = 0
 
-nnoremap <leader>ip :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags . <CR>
+nnoremap <leader>tp :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags . <CR>
+nnoremap <leader>ty :AsyncRun ctags  --python-kinds=-iv --languages=python --recurse --fields=+l -f pytags . <CR>
 
 nnoremap K <nop>
 nnoremap t <nop>
