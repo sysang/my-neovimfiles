@@ -21,7 +21,6 @@ syntax on
 set completeopt-=preview
 
 autocmd VimEnter * NERDTree
-autocmd VimEnter * :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags .
 
 "set foldmethod=manual nofoldenable
 set foldmethod=indent
@@ -29,6 +28,8 @@ set foldlevelstart=1
 set foldnestmax=3
 
 let g:vim_json_syntax_conceal = 0
+
+nnoremap <leader>ip :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags . <CR>
 
 nnoremap K <nop>
 nnoremap t <nop>
