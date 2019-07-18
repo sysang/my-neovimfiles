@@ -12,18 +12,16 @@ set tags=phptags,jstags,pytags
 set ff=unix
 set list
 set nowrap
-" set backupdir=~/.vim/backup
-" set undodir=~/.vim/undo
-" set directory=~/.vim/swp
-set backupdir=~\.vim\backup
-set undodir=~\.vim\undo
-set directory=~\.vim\swp
+set backupdir=~/.vim/backup
+set undodir=~/.vim/undo
+set directory=~/.vim/swp
+" set backupdir=~\.vim\backup
+" set undodir=~\.vim\undo
+" set directory=~\.vim\swp
 syntax on
 
 "https://stackoverflow.com/questions/15962421/how-can-i-disable-scratch-preview-window
 set completeopt-=preview
-
-autocmd VimEnter * NERDTree
 
 "set foldmethod=manual nofoldenable
 set foldmethod=indent
