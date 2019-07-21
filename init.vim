@@ -94,6 +94,8 @@ Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'deoplete-plugins/deoplete-jedi'
+
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
@@ -105,6 +107,7 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'leafgarland/typescript-vim'
 Plug 'elzr/vim-json'
+Plug 'vim-python/python-syntax'
 
 Plug 'yggdroot/indentline'
 
