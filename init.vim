@@ -115,6 +115,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'skywind3000/asyncrun.vim'
 
+Plug 'goerz/jupytext.vim'
+
 " Initialize plugin system
 call plug#end()
 
