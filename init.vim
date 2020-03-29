@@ -29,6 +29,8 @@ set foldlevelstart=1
 set foldnestmax=3
 
 let g:vim_json_syntax_conceal = 0
+let g:markdown_syntax_conceal = 0
+let g:markdown_fenced_languages = ['python', 'bash=sh']
 
 nnoremap <leader>tp :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags . <CR>
 nnoremap <leader>ty :AsyncRun ctags  --python-kinds=-iv --languages=python --recurse --fields=+l -f pytags . <CR>
@@ -108,14 +110,13 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'leafgarland/typescript-vim'
 Plug 'elzr/vim-json'
 Plug 'vim-python/python-syntax'
+Plug 'tpope/vim-markdown'
 
 Plug 'yggdroot/indentline'
 
 Plug 'tpope/vim-fugitive'
 
 Plug 'skywind3000/asyncrun.vim'
-
-Plug 'goerz/jupytext.vim'
 
 " Initialize plugin system
 call plug#end()
