@@ -51,8 +51,8 @@ nnoremap <leader>h 5b
 nnoremap <leader>l 5w
 inoremap <C-l> <right>
 
-nnoremap <C-a> :wa<cr>
-inoremap <C-a> <Esc>:wa<cr>
+nnoremap <C-a> :w<cr>
+inoremap <C-a> <Esc>:w<cr>
 vmap <C-s>c "+y<CR>
 nnoremap <C-s>v "+p
 inoremap <C-s>v <C-R>+
@@ -157,14 +157,6 @@ nnoremap <silent> <c-j> :FZF --tiebreak=begin,length,index<cr>
 nnoremap <silent> <c-k> :Buffers<cr>
 nnoremap <silent> <c-n> :BLines<cr>
 
-" terminal settings
-let g:neoterm_automap_keys = '<leader>tm'
-let g:neoterm_use_relative_path = 1
-let g:neoterm_autoscroll = 1
-let g:neoterm_always_open_to_exec = 0
-
-nnoremap te :te "C:\Program Files\PowerShell\7-preview\pwsh.exe"<cr>
-
 " NeoSolarized settings
 colorscheme NeoSolarized
 set background=dark
@@ -247,3 +239,23 @@ let g:terminal_color_12 = "#83AFE5"
 let g:terminal_color_13 = "#D18EC2"
 let g:terminal_color_14 = "#7FC1CA"
 let g:terminal_color_15 = "#E6EEF3"
+
+"For ipynb
+" - Plug 'tpope/vim-markdown'
+" - pip install --user jupytext
+
+function Sync_Markdown_Ipybn()
+    execute "!jupytext --sync " . @%
+endfunction
+
+autocmd BufWritePost *.md :call Sync_Markdown_Ipybn()
+
+function Create_New_Ipynb()
+    let s:rootname = expand("%:p:r")
+    let s:filename = s:rootname . '.ipynb'
+    if !filereadable(s:filename)
+        execute "!jupytext --to notebook " . @%
+        execute "!jupytext --set-formats md,ipynb " . @%
+:   endif
+endfunction
+autocmd BufRead,BufNewFile *.md :call Create_New_Ipynb()
