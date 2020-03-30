@@ -245,7 +245,7 @@ let g:terminal_color_15 = "#E6EEF3"
 " - pip install --user jupytext
 
 function Sync_Markdown_Ipybn()
-    execute "!jupytext --sync " . @%
+    silent execute "!jupytext --sync " . @%
 endfunction
 
 autocmd BufWritePost *.md :call Sync_Markdown_Ipybn()
