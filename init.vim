@@ -92,6 +92,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'iCyMind/NeoSolarized'
+Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 
@@ -158,29 +159,36 @@ nnoremap <silent> <c-k> :Buffers<cr>
 nnoremap <silent> <c-n> :BLines<cr>
 
 " NeoSolarized settings
-colorscheme NeoSolarized
-set background=dark
-set synmaxcol=300
+" colorscheme NeoSolarized
+" set background=dark
+" set synmaxcol=300
 
 " default value is "normal", Setting this option to "high" or "low" does use the 
 " same Solarized palette but simply shifts some values up or down in order to 
 " expand or compress the tonal range displayed.
-let g:neosolarized_contrast = "high"
+" let g:neosolarized_contrast = "high"
 
 " Special characters such as trailing whitespace, tabs, newlines, when displayed 
 " using ":set list" can be set to one of three levels depending on your needs. 
 " Default value is "normal". Provide "high" and "low" options.
-let g:neosolarized_visibility = "normal"
+" let g:neosolarized_visibility = "normal"
 
 " I make vertSplitBar a transparent background color. If you like the origin solarized vertSplitBar
 " style more, set this value to 0.
-let g:neosolarized_vertSplitBgTrans = 1
+" let g:neosolarized_vertSplitBgTrans = 1
 
 " If you wish to enable/disable NeoSolarized from displaying bold, underlined or italicized 
 " typefaces, simply assign 1 or 0 to the appropriate variable. Default values:  
-let g:neosolarized_bold = 1
-let g:neosolarized_underline = 1
-let g:neosolarized_italic = 0
+" let g:neosolarized_bold = 1
+" let g:neosolarized_underline = 1
+" let g:neosolarized_italic = 0
+
+"One Dark them setting
+syntax on
+colorscheme onedark
+
+" Fix wrong color in mosh
+set notermguicolors
 
 if has("autocmd")
 " Drupal *.module and *.install files.
@@ -217,28 +225,12 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
+let g:neosnippet#snippets_directory='/home/sysang/.config/nvim/snippets'
+
 " For conceal markers.
 if has('conceal')
 set conceallevel=2 concealcursor=niv
 endif
-
-" NEOVIM TERMINAL MODE
-let g:terminal_color_0 = "#445660"
-let g:terminal_color_1 = "#DF8C8C"
-let g:terminal_color_2 = "#A8CE93"
-let g:terminal_color_3 = "#DADA93"
-let g:terminal_color_4 = "#83AFE5"
-let g:terminal_color_5 = "#9A93E1"
-let g:terminal_color_6 = "#7FC1CA"
-let g:terminal_color_7 = "#C5D4DD"
-let g:terminal_color_8 = "#899BA6"
-let g:terminal_color_9 = "#F2C38F"
-let g:terminal_color_10 = "#A8CE93"
-let g:terminal_color_11 = "#DADA93"
-let g:terminal_color_12 = "#83AFE5"
-let g:terminal_color_13 = "#D18EC2"
-let g:terminal_color_14 = "#7FC1CA"
-let g:terminal_color_15 = "#E6EEF3"
 
 "For ipynb
 " - Plug 'tpope/vim-markdown'
