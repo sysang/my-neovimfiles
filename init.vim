@@ -97,6 +97,9 @@ Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Required:
+"https://github.com/neovim/python-client
+"https://github.com/davidhalter/jedi
 Plug 'deoplete-plugins/deoplete-jedi'
 
 Plug 'Shougo/neosnippet.vim'
@@ -111,7 +114,6 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'leafgarland/typescript-vim'
 Plug 'elzr/vim-json'
 Plug 'vim-python/python-syntax'
-Plug 'tpope/vim-markdown'
 
 Plug 'yggdroot/indentline'
 
@@ -251,3 +253,7 @@ function Create_New_Ipynb()
 :   endif
 endfunction
 autocmd BufRead,BufNewFile *.md :call Create_New_Ipynb()
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#jedi#enable_typeinfo = 0
