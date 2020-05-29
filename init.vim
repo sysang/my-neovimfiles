@@ -186,6 +186,7 @@ nnoremap <silent> <c-n> :BLines<cr>
 " let g:neosolarized_italic = 0
 
 "One Dark them setting
+let g:onedark_color_overrides = {"white": { "gui": "#ABB2BF", "cterm": "253", "cterm16": "7" }}
 syntax on
 colorscheme onedark
 
