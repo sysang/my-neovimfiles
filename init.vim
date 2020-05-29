@@ -186,7 +186,7 @@ nnoremap <silent> <c-n> :BLines<cr>
 " let g:neosolarized_italic = 0
 
 "One Dark them setting
-let g:onedark_color_overrides = {"white": { "gui": "#ABB2BF", "cterm": "253", "cterm16": "7" }}
+let g:onedark_color_overrides = {"white": { "gui": "#ABB2BF", "cterm": "253", "cterm16": "7" }, "visual_black": { "gui": "NONE", "cterm": "189", "cterm16": "0" }}
 syntax on
 colorscheme onedark
 
@@ -203,7 +203,6 @@ augroup module
   autocmd BufRead,BufNewFile *.inc set filetype=php
   autocmd BufRead,BufNewFile *.profile set filetype=php
   autocmd BufRead,BufNewFile *.view set filetype=php
-  autocmd BufRead,BufNewFile *-ann.md set filetype=py
 augroup END
 endif
 
