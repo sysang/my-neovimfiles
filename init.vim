@@ -261,6 +261,8 @@ endif
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources._ = ['buffer', 'tag', 'ultisnips']
+call deoplete#custom#option('sources', {
+\ '_': ['buffer', 'tag', 'jedi']
+\})
 
 let g:deoplete#sources#jedi#enable_typeinfo = 0
