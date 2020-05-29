@@ -33,7 +33,7 @@ let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['python', 'bash=sh']
 
 nnoremap <leader>tp :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags . <CR>
-nnoremap <leader>ty :AsyncRun ctags  --python-kinds=-iv --languages=python --recurse --fields=+l -f pytags . <CR>
+nnoremap <leader>ty :AsyncRun ctags  --python-kinds=-iv --languages=python --recurse --fields=+l --exclude=.git -f pytags . <CR>
 
 nnoremap K <nop>
 nnoremap t <nop>
@@ -203,6 +203,7 @@ augroup module
   autocmd BufRead,BufNewFile *.inc set filetype=php
   autocmd BufRead,BufNewFile *.profile set filetype=php
   autocmd BufRead,BufNewFile *.view set filetype=php
+  autocmd BufRead,BufNewFile *-ann.md set filetype=py
 augroup END
 endif
 
@@ -252,10 +253,10 @@ function Create_New_Ipynb()
         execute "!jupytext --set-formats md,ipynb " . @%
 :   endif
 endfunction
-autocmd BufRead,BufNewFile *.md :call Create_New_Ipynb()
 
 if executable('jupytext')
-autocmd BufWritePost *.md :call Sync_Markdown_Ipybn()
+autocmd BufRead,BufNewFile *-ann.md :call Create_New_Ipynb()
+autocmd BufWritePost *-ann.md :call Sync_Markdown_Ipybn()
 endif
 
 " Use deoplete.
