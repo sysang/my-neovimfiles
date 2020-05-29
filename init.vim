@@ -207,6 +207,7 @@ endif
 
 
 " The Silver Searcher
+" git@github.com:sysang/my-neovimfiles.git
 if executable('ag')
 " Use ag over grep
 set grepprg=ag\ --nogroup\ --nocolor
