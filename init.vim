@@ -101,6 +101,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "https://github.com/neovim/python-client
 "https://github.com/davidhalter/jedi
 Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-tag'
 
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -260,4 +261,6 @@ endif
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources._ = ['buffer', 'tag', 'ultisnips']
+
 let g:deoplete#sources#jedi#enable_typeinfo = 0
