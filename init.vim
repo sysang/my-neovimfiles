@@ -235,15 +235,13 @@ if has('conceal')
 set conceallevel=2 concealcursor=niv
 endif
 
-"For ipynb
-" - Plug 'tpope/vim-markdown'
+" For jupyter notebook editing:
+" Edit on markdown file, convert to ipynb format
 " - pip install --user jupytext
 
 function Sync_Markdown_Ipybn()
     silent execute "!jupytext --sync " . @%
 endfunction
-
-autocmd BufWritePost *.md :call Sync_Markdown_Ipybn()
 
 function Create_New_Ipynb()
     let s:rootname = expand("%:p:r")
@@ -254,6 +252,10 @@ function Create_New_Ipynb()
 :   endif
 endfunction
 autocmd BufRead,BufNewFile *.md :call Create_New_Ipynb()
+
+if executable('jupytext')
+autocmd BufWritePost *.md :call Sync_Markdown_Ipybn()
+endif
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
