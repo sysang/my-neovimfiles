@@ -262,7 +262,9 @@ endif
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('sources', {
-\ '_': ['buffer', 'tag', 'jedi']
+\ '_': ['buffer', 'tag', 'ultisnips'],
+\ 'markdown': ['tag', 'jedi'],
+\ 'python': ['tag', 'jedi']
 \})
 
 let g:deoplete#sources#jedi#enable_typeinfo = 0
