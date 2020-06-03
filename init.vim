@@ -255,8 +255,8 @@ function Create_New_Ipynb()
 endfunction
 
 if executable('jupytext')
-autocmd BufRead,BufNewFile *-ann.md :call Create_New_Ipynb()
-autocmd BufWritePost *-ann.md :call Sync_Markdown_Ipybn()
+autocmd BufRead,BufNewFile *__md2nb.md :call Create_New_Ipynb()
+autocmd BufWritePost *__md2nb.md :call Sync_Markdown_Ipybn()
 endif
 
 " Use deoplete.
