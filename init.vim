@@ -49,7 +49,7 @@ nnoremap <leader>j 5j
 nnoremap <leader>k 5k
 nnoremap <leader>h 5b
 nnoremap <leader>l 5w
-inoremap <C-l> <right>
+inoremap <C-f> <right>
 
 nnoremap <C-a> :w<cr>
 inoremap <C-a> <Esc>:w<cr>
