@@ -187,12 +187,12 @@ nnoremap <silent> <c-n> :BLines<cr>
 " let g:neosolarized_italic = 0
 
 "One Dark them setting
-let g:onedark_color_overrides = {"white": { "gui": "#ABB2BF", "cterm": "253", "cterm16": "7" }, "visual_black": { "gui": "NONE", "cterm": "189", "cterm16": "0" }}
+let g:onedark_color_overrides = {"white": { "gui": "#DADADA", "cterm": "253", "cterm16": "7" }, "visual_black": { "gui": "#D7D7FF", "cterm": "189", "cterm16": "0" }}
 syntax on
 colorscheme onedark
 
 " Fix wrong color in mosh
-set notermguicolors
+" set notermguicolors
 
 if has("autocmd")
 " Drupal *.module and *.install files.
