@@ -3,7 +3,6 @@
 set spelllang=en_us
 set spell
 set relativenumber number numberwidth=3
-set termguicolors
 let g:mapleader=' '
 set iskeyword+=-
 set tabstop=4 shiftwidth=4 softtabstop=4
@@ -15,10 +14,6 @@ set nowrap
 set backupdir=~/.vim/backup
 set undodir=~/.vim/undo
 set directory=~/.vim/swp
-" set backupdir=~\.vim\backup
-" set undodir=~\.vim\undo
-" set directory=~\.vim\swp
-syntax on
 
 "https://stackoverflow.com/questions/15962421/how-can-i-disable-scratch-preview-window
 set completeopt-=preview
@@ -81,18 +76,17 @@ nnoremap tt gt
 nnoremap tn :tabnew<cr>
 
 " save automatically when text is changed
-set updatetime=400
+set updatetime=1000
 au CursorHold * silent! update
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'skywind3000/asyncrun.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
-Plug 'iCyMind/NeoSolarized'
-Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 
@@ -103,24 +97,25 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
 
+Plug 'shawncplus/phpcomplete.vim'
+
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
-Plug 'shawncplus/phpcomplete.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
-Plug 'evidens/vim-twig'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'leafgarland/typescript-vim'
-Plug 'elzr/vim-json'
 Plug 'vim-python/python-syntax'
 
 Plug 'yggdroot/indentline'
 
 Plug 'tpope/vim-fugitive'
 
-Plug 'skywind3000/asyncrun.vim'
+" Has been downloaded to make some tweaks
+" Plug 'iCyMind/NeoSolarized'
+Plug 'joshdick/onedark.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -161,19 +156,22 @@ nnoremap <silent> <c-j> :FZF --tiebreak=begin,length,index<cr>
 nnoremap <silent> <c-k> :Buffers<cr>
 nnoremap <silent> <c-n> :BLines<cr>
 
+syntax on
+colorscheme onedark
+set termguicolors
+
 " NeoSolarized settings
-" colorscheme NeoSolarized
- set background=light
+ colorscheme NeoSolarized
  set synmaxcol=300
 
-" default value is "normal", Setting this option to "high" or "low" does use the 
+" default value is 'normal', Setting this option to 'high' or 'low' does use the 
 " same Solarized palette but simply shifts some values up or down in order to 
 " expand or compress the tonal range displayed.
  let g:neosolarized_contrast = "high"
 
 " Special characters such as trailing whitespace, tabs, newlines, when displayed 
-" using ":set list" can be set to one of three levels depending on your needs. 
-" Default value is "normal". Provide "high" and "low" options.
+" using ':set list' can be set to one of three levels depending on your needs. 
+" Default value is 'normal'. Provide 'high" and 'low' options.
  let g:neosolarized_visibility = "low"
 
 " I make vertSplitBar a transparent background color. If you like the origin solarized vertSplitBar
@@ -182,14 +180,13 @@ nnoremap <silent> <c-n> :BLines<cr>
 
 " If you wish to enable/disable NeoSolarized from displaying bold, underlined or italicized 
 " typefaces, simply assign 1 or 0 to the appropriate variable. Default values:  
-" let g:neosolarized_bold = 1
-" let g:neosolarized_underline = 1
-" let g:neosolarized_italic = 0
+let g:neosolarized_bold = 1
+let g:neosolarized_underline = 1
+let g:neosolarized_italic = 0
 
 " One Dark them setting
-" syntax on
- let g:onedark_color_overrides = {"white": { "gui": "#DADADA", "cterm": "253", "cterm16": "7" }, "visual_black": { "gui": "#D7D7FF", "cterm": "189", "cterm16": "0" }}
- colorscheme onedark
+" let g:onedark_color_overrides = {"white": { "gui": "#DADADA", "cterm": "253", "cterm16": "7" }, "visual_black": { "gui": "#D7D7FF", "cterm": "189", "cterm16": "0" }, "comment_grey" : { "gui": "#5D8AA8", "cterm": "59", "cterm16": "15" }}
+" colorscheme dracula
 
 " Fix wrong color in mosh
 " set notermguicolors
