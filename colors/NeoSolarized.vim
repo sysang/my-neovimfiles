@@ -153,8 +153,10 @@ let colors_name = "NeoSolarized"
     let s:gui_base2       = "#eee8d5"
     let s:gui_base3       = "#fdf6e3"
     let s:gui_yellow      = "#b58900"
-    let s:gui_orange      = "#cb4b16"
-    let s:gui_red         = "#dc322f"
+    " originally #cb4b16
+    let s:gui_orange      = "#dc322f"
+    " originally #dc322f
+    let s:gui_red         = "#cb4b16"
     let s:gui_magenta     = "#d33682"
     let s:gui_violet      = "#6c71c4"
     " originally was 268bd2
