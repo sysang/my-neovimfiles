@@ -147,23 +147,23 @@ let colors_name = "NeoSolarized"
     let s:gui_base02      = "#073642"
     let s:gui_base01      = "#586e75"
     let s:gui_base00      = "#657b83"
-    " originally was 839496
+    " originally was 839496, highlight normal text
     let s:gui_base0       = "#DCDCDC"
     let s:gui_base1       = "#93a1a1"
     let s:gui_base2       = "#eee8d5"
     let s:gui_base3       = "#fdf6e3"
     let s:gui_yellow      = "#b58900"
-    " originally #cb4b16
+    " originally #cb4b16, highlight language keyword
     let s:gui_orange      = "#dc322f"
-    " originally #dc322f
+    " originally #dc322f, highlight language keyword
     let s:gui_red         = "#cb4b16"
     let s:gui_magenta     = "#d33682"
     let s:gui_violet      = "#6c71c4"
-    " originally was #268bd2
-    let s:gui_blue        = "#9D9F7C"
+    " originally was #268bd2, highlight folder, variable, class name, function name
+    let s:gui_blue        = "#F08348"
     " originally #2aa198
     let s:gui_cyan        = "#31B129"
-    " originally #719e07
+    " originally #719e07, highlight language keyword
     let s:gui_green       = "#268bd2" "experimental
     "let s:green       = "#859900" "original
 
