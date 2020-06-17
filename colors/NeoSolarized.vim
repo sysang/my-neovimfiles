@@ -164,7 +164,7 @@ let colors_name = "NeoSolarized"
     " originally #2aa198, highlight string, value
     let s:gui_cyan        = "#31B129"
     " originally #719e07, highlight language keyword
-    let s:gui_green       = "#268bd2" "experimental
+    let s:gui_green       = "#6a5acd" "experimental
     "let s:green       = "#859900" "original
 
     let s:term_mode       = "cterm"
