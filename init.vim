@@ -261,6 +261,7 @@ endif
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('min_pattern_length', 4)
 call deoplete#custom#option('sources', {
 \ '_': ['buffer', 'tag', 'ultisnips'],
 \ 'markdown': ['tag', 'jedi'],
