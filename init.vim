@@ -1,7 +1,7 @@
 " START
 
-set spelllang=en_us
 set spell
+set spelllang=en_us
 set relativenumber number numberwidth=3
 let g:mapleader=' '
 set iskeyword+=-
@@ -62,7 +62,7 @@ nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 nnoremap <leader>i i<Space><Esc>i
 nnoremap <S-k> k<S-j>
-inoremap <S-CR> <CR><C-o><S-o>
+inoremap <C-j> <CR><C-o><S-o>
 
 nnoremap <leader>gc :ccl<cr>
 nnoremap <leader>go :copen<cr><C-w><C-o>
