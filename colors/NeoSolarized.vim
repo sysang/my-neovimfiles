@@ -156,7 +156,7 @@ let colors_name = "NeoSolarized"
     " originally #cb4b16, highlight language keyword
     let s:gui_orange      = "#EB3F00"
     " originally #dc322f, highlight language keyword
-    let s:gui_red         = "#8A0E0E"
+    let s:gui_red         = "#B72B56"
     let s:gui_magenta     = "#d33682"
     let s:gui_violet      = "#6c71c4"
     " originally was #268bd2, highlight folder, variable, class name, function name
