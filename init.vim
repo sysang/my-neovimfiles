@@ -269,3 +269,6 @@ call deoplete#custom#option('sources', {
 \})
 
 let g:deoplete#sources#jedi#enable_typeinfo = 0
+
+" vim-commentary configuration
+autocmd FileType markdown setlocal commentstring=#\ %s
