@@ -272,3 +272,16 @@ let g:deoplete#sources#jedi#enable_typeinfo = 0
 
 " vim-commentary configuration
 autocmd FileType markdown setlocal commentstring=#\ %s
+
+" vim-fugitive configuration for usage
+" NOTE: 
+" - MAPS:
+"   =       Toggle an inline diff of the file under the cursor.
+"   0       Open the file or |fugitive-object| under the cursor in a new tab.
+"   cc      Create a commit.
+
+nnoremap <leader>r :setlocal nomodifiable<cr>
+nnoremap <leader>m :setlocal modifiable<cr>
+
+nnoremap <leader>gg :vertical:Git<cr>
+nnoremap <leader>gd :Gdiffsplit<cr>
