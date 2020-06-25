@@ -274,14 +274,26 @@ let g:deoplete#sources#jedi#enable_typeinfo = 0
 autocmd FileType markdown setlocal commentstring=#\ %s
 
 " vim-fugitive configuration for usage
+"
 " NOTE: 
+" - Gwrite  Write to the current file's path and stage the results. When run in a work tree file, it is effectively git add.
+"
+" - Gread   When the argument is omitted, this is similar to git-checkout on a work tree file
+"
 " - MAPS:
 "   =       Toggle an inline diff of the file under the cursor.
 "   0       Open the file or |fugitive-object| under the cursor in a new tab.
 "   cc      Create a commit.
+"   X       Discard the change under the cursor.  This uses `checkout` or `clean` under the hood.
+"   I, P    Invoke |:Git| add --patch or reset --patch on the file under the cursor. 
+"       On untracked files, this instead calls |:Git| add --intent-to-add.
+" - Neovim built-in
+"   do      In gitdiff screen, obtain the difference from file which's in comparing against
+"   dp      In gitdiff screen, push the difference to file which's in comparing against
 
 nnoremap <leader>r :setlocal nomodifiable<cr>
 nnoremap <leader>m :setlocal modifiable<cr>
 
 nnoremap <leader>gg :vertical:Git<cr>
-nnoremap <leader>gd :Gdiffsplit<cr>
+nnoremap <leader>gd :Gdiffsplit<cr> :setlocal nomodifiable<cr>
+nnoremap <leader>gl :Gllog<cr>
