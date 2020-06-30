@@ -23,7 +23,7 @@ set foldmethod=indent
 set foldlevelstart=1
 set foldnestmax=3
 
-set conceallevel=0
+let g:vim_json_syntax_conceal = 0
 let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['python', 'bash=sh']
 
@@ -102,9 +102,7 @@ Plug 'shawncplus/phpcomplete.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'mxw/vim-jsx'
+Plug 'elzr/vim-json'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'vim-python/python-syntax'
@@ -195,18 +193,19 @@ highlight Normal guibg=none
 highlight NonText guibg=none
 
 if has("autocmd")
+
 " Drupal *.module and *.install files.
 augroup module
-  autocmd BufRead,BufNewFile *.module set filetype=php
-  autocmd BufRead,BufNewFile *.theme set filetype=php
-  autocmd BufRead,BufNewFile *.install set filetype=php
-  autocmd BufRead,BufNewFile *.test set filetype=php
-  autocmd BufRead,BufNewFile *.inc set filetype=php
-  autocmd BufRead,BufNewFile *.profile set filetype=php
-  autocmd BufRead,BufNewFile *.view set filetype=php
+    autocmd BufRead,BufNewFile *.module set filetype=php
+    autocmd BufRead,BufNewFile *.theme set filetype=php
+    autocmd BufRead,BufNewFile *.install set filetype=php
+    autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd BufRead,BufNewFile *.inc set filetype=php
+    autocmd BufRead,BufNewFile *.profile set filetype=php
+    autocmd BufRead,BufNewFile *.view set filetype=php
 augroup END
-endif
 
+endif
 
 " The Silver Searcher
 " git@github.com:sysang/my-neovimfiles.git
@@ -231,11 +230,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 let g:neosnippet#snippets_directory='/home/sysang/.config/nvim/snippets'
-
-" For conceal markers.
-if has('conceal')
-set conceallevel=2 concealcursor=niv
-endif
 
 " For jupyter notebook editing:
 " Edit on markdown file, convert to ipynb format
