@@ -23,7 +23,7 @@ set foldmethod=indent
 set foldlevelstart=1
 set foldnestmax=3
 
-let g:vim_json_syntax_conceal = 0
+set conceallevel=0
 let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['python', 'bash=sh']
 
