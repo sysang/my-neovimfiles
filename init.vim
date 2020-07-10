@@ -36,9 +36,12 @@ nnoremap <C-j> <nop>
 inoremap <C-j> <nop>
 nnoremap <C-k> <nop>
 inoremap <C-k> <nop>
-nnoremap <C-q> :q<cr>
+nnoremap <leader>h <Nop>
+nnoremap <leader>l <Nop>
 
+nnoremap <C-q> :q<cr>
 nnoremap <leader>no :noh<Cr>
+
 
 nnoremap <leader>j 5j
 nnoremap <leader>k 5k
@@ -67,6 +70,10 @@ inoremap <C-j> <CR><C-o><S-o>
 nnoremap <leader>gc :ccl<cr>
 nnoremap <leader>go :copen<cr><C-w><C-o>
 
+nnoremap zl <nop>
+nnoremap zh <nop>
+nnoremap zl zL
+nnoremap zh zH
 nnoremap <leader>zl z20l
 nnoremap <leader>zh z20h
 
@@ -76,8 +83,8 @@ nnoremap tt gt
 nnoremap tn :tabnew<cr>
 nnoremap tl :lclose<cr>
 
-nnoremap gn :cnf<cr>
-nnoremap gp :cpf<cr>
+nnoremap gn :lnext <cr> : normal! zz <cr>
+nnoremap gp :lprevious <cr> : normal! zz <cr>
 
 " save automatically when text is changed
 set updatetime=1000
@@ -298,7 +305,3 @@ nnoremap <leader>gl :Gllog<cr>
 "USAGE OF: ferret plugin
 nnoremap <leader>s <nop>
 nnoremap <leader>s :Lack -w <C-r><C-w><CR>
-
-"Prevent any mapping to <leader>h, <leader>l
-nnoremap <leader>h <Nop>
-nnoremap <leader>l <Nop>
