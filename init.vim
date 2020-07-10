@@ -106,6 +106,7 @@ Plug 'elzr/vim-json'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'vim-python/python-syntax'
+Plug 'plasticboy/vim-markdown'
 
 Plug 'yggdroot/indentline'
 
