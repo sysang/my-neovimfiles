@@ -74,9 +74,10 @@ nnoremap <leader>w :cd C:\Users\dsysang\workspace<cr>:NERDTree <cr>
 
 nnoremap tt gt
 nnoremap tn :tabnew<cr>
+nnoremap tl :lclose<cr>
 
-nnoremap gn :cn | normal! zz
-nnoremap gp :cp | normal! zz
+nnoremap gn :cnf<cr>
+nnoremap gp :cpf<cr>
 
 " save automatically when text is changed
 set updatetime=1000
@@ -293,6 +294,10 @@ nnoremap <leader>m :setlocal modifiable<cr>
 nnoremap <leader>gg :vertical:Git<cr>
 nnoremap <leader>gd :Gdiffsplit<cr> :setlocal nomodifiable<cr>
 nnoremap <leader>gl :Gllog<cr>
+
+"USAGE OF: ferret plugin
+nnoremap <leader>s <nop>
+nnoremap <leader>s :Lack -w <C-r><C-w><CR>
 
 "Prevent any mapping to <leader>h, <leader>l
 nnoremap <leader>h <Nop>
