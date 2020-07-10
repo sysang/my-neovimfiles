@@ -38,7 +38,7 @@ nnoremap <C-k> <nop>
 inoremap <C-k> <nop>
 nnoremap <C-q> :q<cr>
 
-nnoremap <leader>hn :noh<Cr>
+nnoremap <leader>no :noh<Cr>
 
 nnoremap <leader>j 5j
 nnoremap <leader>k 5k
@@ -67,28 +67,28 @@ inoremap <C-j> <CR><C-o><S-o>
 nnoremap <leader>gc :ccl<cr>
 nnoremap <leader>go :copen<cr><C-w><C-o>
 
-nnoremap <C-left> z10l
-nnoremap <C-right> z10h
+nnoremap <leader>zl z20l
+nnoremap <leader>zh z20h
 
 nnoremap <leader>w :cd C:\Users\dsysang\workspace<cr>:NERDTree <cr>
 
 nnoremap tt gt
 nnoremap tn :tabnew<cr>
 
+nnoremap gn :cn | normal! zz
+nnoremap gp :cp | normal! zz
+
 " save automatically when text is changed
 set updatetime=1000
 au CursorHold * silent! update
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/.plugged')
 
 Plug 'skywind3000/asyncrun.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'Raimondi/delimitMate'
+Plug 'wincent/ferret'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Required:
@@ -97,8 +97,11 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
 
-Plug 'shawncplus/phpcomplete.vim'
-
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
+Plug 'yggdroot/indentline'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
@@ -107,8 +110,6 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'vim-python/python-syntax'
 Plug 'plasticboy/vim-markdown'
-
-Plug 'yggdroot/indentline'
 
 Plug 'tpope/vim-fugitive'
 
@@ -277,7 +278,7 @@ autocmd FileType markdown setlocal commentstring=#\ %s
 "
 " - MAPS:
 "   =       Toggle an inline diff of the file under the cursor.
-"   0       Open the file or |fugitive-object| under the cursor in a new tab.
+"   O       Open the file or |fugitive-object| under the cursor in a new tab.
 "   cc      Create a commit.
 "   X       Discard the change under the cursor.  This uses `checkout` or `clean` under the hood.
 "   I, P    Invoke |:Git| add --patch or reset --patch on the file under the cursor. 
@@ -292,3 +293,7 @@ nnoremap <leader>m :setlocal modifiable<cr>
 nnoremap <leader>gg :vertical:Git<cr>
 nnoremap <leader>gd :Gdiffsplit<cr> :setlocal nomodifiable<cr>
 nnoremap <leader>gl :Gllog<cr>
+
+"Prevent any mapping to <leader>h, <leader>l
+nnoremap <leader>h <Nop>
+nnoremap <leader>l <Nop>
