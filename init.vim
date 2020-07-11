@@ -129,8 +129,9 @@ Plug 'joshdick/onedark.vim'
 call plug#end()
 
 " NERDTree settings
+nnoremap <C-p> <nop>
+nnoremap <C-p> :NERDTreeToggle <CR>
 nnoremap <leader>nt :NERDTree <CR>
-nnoremap <leader>p :NERDTreeToggle <CR>
 nnoremap <leader>f  :NERDTreeFind <CR>
 
 let g:NERDTreeMinimalUI = 1
