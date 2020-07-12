@@ -102,7 +102,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Required:
 "https://github.com/neovim/python-client
 "https://github.com/davidhalter/jedi
-Plug 'deoplete-plugins/deoplete-jedi'
+"Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'deoplete-plugins/deoplete-tag'
 
 Plug 'tpope/vim-commentary'
