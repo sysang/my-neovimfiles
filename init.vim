@@ -109,7 +109,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
-Plug 'yggdroot/indentline'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
