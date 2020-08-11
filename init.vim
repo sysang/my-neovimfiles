@@ -7,7 +7,7 @@ let g:mapleader=' '
 set iskeyword+=-
 set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab shiftround
-set tags=phptags,jstags,pytags,pylibtags
+set tags=phptags,jstags,pytags,pylibtags,anytags
 set ff=unix
 set list
 set nowrap
@@ -28,7 +28,8 @@ let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['python', 'bash=sh']
 
 nnoremap <leader>tph :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags . <CR>
-nnoremap <leader>tpy :AsyncRun ctags  --python-kinds=-iv --languages=python --recurse --fields=+l --exclude=.git -f pytags . <CR>
+nnoremap <leader>tpy :AsyncRun ctags --python-kinds=-iv --languages=python --recurse --fields=+l -f pytags . <CR>
+nnoremap <leader>tag :AsyncRun ctags --recurse -f anytags . <CR>
 
 nnoremap K <nop>
 nnoremap t <nop>
@@ -87,7 +88,7 @@ nnoremap gn :lnext <cr> : normal! zz <cr>
 nnoremap gp :lprevious <cr> : normal! zz <cr>
 
 " save automatically when text is changed
-set updatetime=1000
+set updatetime=1500
 au CursorHold * silent! update
 
 call plug#begin('~/.config/nvim/.plugged')
@@ -98,12 +99,14 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'wincent/ferret'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+"Plug 'deoplete-plugins/deoplete-tag'
+
 "Required:
 "https://github.com/neovim/python-client
 "https://github.com/davidhalter/jedi
 "Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'deoplete-plugins/deoplete-tag'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -203,8 +206,6 @@ colorscheme onedark
 highlight Normal guibg=none
 highlight NonText guibg=none
 
-if has("autocmd")
-
 " Drupal *.module and *.install files.
 "augroup module
 "    autocmd BufRead,BufNewFile *.module set filetype=php
@@ -216,7 +217,9 @@ if has("autocmd")
 "    autocmd BufRead,BufNewFile *.view set filetype=php
 "augroup END
 
-endif
+"ADD TAG TO DICTIONARY, ADD DICTIONARY TO CTRL+N
+autocmd BufRead,BufNewFile * setlocal dictionary+=anytags
+set complete+=k
 
 " The Silver Searcher
 " git@github.com:sysang/my-neovimfiles.git
@@ -242,7 +245,8 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 let g:neosnippet#snippets_directory='/home/sysang/.config/nvim/snippets'
 
-" For jupyter notebook editing:
+" FOR JUPYTER NOTEBOOK EDITING:
+"
 " Edit on markdown file, convert to ipynb format
 " - pip install --user jupytext
 
@@ -265,17 +269,14 @@ autocmd BufWritePost *__md2nb.md :call Sync_Markdown_Ipybn()
 endif
 
 " DEOPLETE CONFIGURATION
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('min_pattern_length', 3)
-call deoplete#custom#option('sources', {
-\ '_': ['buffer', 'tag', 'ultisnips'],
-\ 'markdown': ['tag'],
-\ 'python': ['tag']
-\})
-
+"
+"let g:deoplete#enable_at_startup = 1
+"call deoplete#custom#option('min_pattern_length', 3) 
+"call deoplete#custom#option('sources', {  '_': ['buffer', 'tag', 'ultisnips']})
 "let g:deoplete#sources#jedi#enable_typeinfo = 0
 
 " VIM-COMMENTARY CONFIGURATION
+"
 autocmd FileType markdown setlocal commentstring=#\ %s
 
 " VIM-FUGITIVE CONFIGURATION FOR USAGE
@@ -295,7 +296,6 @@ autocmd FileType markdown setlocal commentstring=#\ %s
 " - Neovim built-in
 "   do      In gitdiff screen, obtain the difference from file which's in comparing against
 "   dp      In gitdiff screen, push the difference to file which's in comparing against
-
 nnoremap <leader>r :setlocal nomodifiable<cr>
 nnoremap <leader>m :setlocal modifiable<cr>
 
@@ -303,6 +303,7 @@ nnoremap <leader>gg :vertical:Git<cr>
 nnoremap <leader>gd :Gdiffsplit<cr> :setlocal nomodifiable<cr>
 nnoremap <leader>gl :Gllog<cr>
 
-"USAGE OF: ferret plugin
+"USAGE OF: FERRET PLUGIN
+"
 nnoremap <leader>s <nop>
 nnoremap <leader>s :Lack -w <C-r><C-w><CR>
