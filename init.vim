@@ -165,11 +165,12 @@ nnoremap <silent> <c-k> :Buffers<cr>
 nnoremap <silent> <c-n> :BLines<cr>
 
 syntax on
-colorscheme onedark
-set termguicolors
+"set termguicolors
+" Fix wrong color in mosh
+ set notermguicolors
 
 " NeoSolarized settings
- colorscheme NeoSolarized
+" colorscheme NeoSolarized
  set synmaxcol=300
 
 " default value is 'normal', Setting this option to 'high' or 'low' does use the 
@@ -193,11 +194,11 @@ let g:neosolarized_underline = 1
 let g:neosolarized_italic = 0
 
 " One Dark them setting
-" let g:onedark_color_overrides = {"white": { "gui": "#DADADA", "cterm": "253", "cterm16": "7" }, "visual_black": { "gui": "#D7D7FF", "cterm": "189", "cterm16": "0" }, "comment_grey" : { "gui": "#5D8AA8", "cterm": "59", "cterm16": "15" }}
+let g:onedark_color_overrides = {"white": { "gui": "#DADADA", "cterm": "253", "cterm16": "7" }, "visual_black": { "gui": "#D7D7FF", "cterm": "189", "cterm16": "0" }, "comment_grey" : { "gui": "#5D8AA8", "cterm": "59", "cterm16": "15" }}
+colorscheme onedark
+
 " colorscheme dracula
 
-" Fix wrong color in mosh
-" set notermguicolors
 
 highlight Normal guibg=none
 highlight NonText guibg=none
@@ -205,15 +206,15 @@ highlight NonText guibg=none
 if has("autocmd")
 
 " Drupal *.module and *.install files.
-augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.theme set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-    autocmd BufRead,BufNewFile *.test set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd BufRead,BufNewFile *.profile set filetype=php
-    autocmd BufRead,BufNewFile *.view set filetype=php
-augroup END
+"augroup module
+"    autocmd BufRead,BufNewFile *.module set filetype=php
+"    autocmd BufRead,BufNewFile *.theme set filetype=php
+"    autocmd BufRead,BufNewFile *.install set filetype=php
+"    autocmd BufRead,BufNewFile *.test set filetype=php
+"    autocmd BufRead,BufNewFile *.inc set filetype=php
+"    autocmd BufRead,BufNewFile *.profile set filetype=php
+"    autocmd BufRead,BufNewFile *.view set filetype=php
+"augroup END
 
 endif
 
