@@ -7,7 +7,7 @@ let g:mapleader=' '
 set iskeyword+=-
 set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab shiftround
-set tags=phptags,jstags,pytags
+set tags=phptags,jstags,pytags,pylibtags
 set ff=unix
 set list
 set nowrap
@@ -27,8 +27,8 @@ let g:vim_json_syntax_conceal = 0
 let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['python', 'bash=sh']
 
-nnoremap <leader>tp :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags . <CR>
-nnoremap <leader>ty :AsyncRun ctags  --python-kinds=-iv --languages=python --recurse --fields=+l --exclude=.git -f pytags . <CR>
+nnoremap <leader>tph :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags . <CR>
+nnoremap <leader>tpy :AsyncRun ctags  --python-kinds=-iv --languages=python --recurse --fields=+l --exclude=.git -f pytags . <CR>
 
 nnoremap K <nop>
 nnoremap t <nop>
@@ -264,21 +264,21 @@ autocmd BufRead,BufNewFile *__md2nb.md :call Create_New_Ipynb()
 autocmd BufWritePost *__md2nb.md :call Sync_Markdown_Ipybn()
 endif
 
-" Use deoplete.
+" DEOPLETE CONFIGURATION
 let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('min_pattern_length', 5)
+call deoplete#custom#option('min_pattern_length', 3)
 call deoplete#custom#option('sources', {
 \ '_': ['buffer', 'tag', 'ultisnips'],
-\ 'markdown': ['tag', 'jedi'],
-\ 'python': ['tag', 'jedi']
+\ 'markdown': ['tag'],
+\ 'python': ['tag']
 \})
 
-let g:deoplete#sources#jedi#enable_typeinfo = 0
+"let g:deoplete#sources#jedi#enable_typeinfo = 0
 
-" vim-commentary configuration
+" VIM-COMMENTARY CONFIGURATION
 autocmd FileType markdown setlocal commentstring=#\ %s
 
-" vim-fugitive configuration for usage
+" VIM-FUGITIVE CONFIGURATION FOR USAGE
 "
 " NOTE: 
 " - Gwrite  Write to the current file's path and stage the results. When run in a work tree file, it is effectively git add.
