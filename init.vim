@@ -200,9 +200,6 @@ let g:neosolarized_italic = 0
 let g:onedark_color_overrides = {"white": { "gui": "#DADADA", "cterm": "253", "cterm16": "7" }, "visual_black": { "gui": "#D7D7FF", "cterm": "189", "cterm16": "0" }, "comment_grey" : { "gui": "#5D8AA8", "cterm": "59", "cterm16": "15" }}
 colorscheme onedark
 
-" colorscheme dracula
-
-
 highlight Normal guibg=none
 highlight NonText guibg=none
 
