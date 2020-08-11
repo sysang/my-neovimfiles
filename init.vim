@@ -125,7 +125,7 @@ Plug 'tpope/vim-fugitive'
 
 " Has been downloaded to make some tweaks
 " Plug 'iCyMind/NeoSolarized'
-Plug 'joshdick/onedark.vim'
+" Plug 'rakr/vim-one'
 
 " Initialize plugin system
 call plug#end()
@@ -168,9 +168,9 @@ nnoremap <silent> <c-k> :Buffers<cr>
 nnoremap <silent> <c-n> :BLines<cr>
 
 syntax on
-"set termguicolors
+" set termguicolors
 " Fix wrong color in mosh
- set notermguicolors
+set notermguicolors
 
 " NeoSolarized settings
 " colorscheme NeoSolarized
@@ -194,11 +194,11 @@ syntax on
 " typefaces, simply assign 1 or 0 to the appropriate variable. Default values:  
 let g:neosolarized_bold = 1
 let g:neosolarized_underline = 1
-let g:neosolarized_italic = 0
+let g:neosolarized_italic = 1
 
-" One Dark them setting
-let g:onedark_color_overrides = {"white": { "gui": "#DADADA", "cterm": "253", "cterm16": "7" }, "visual_black": { "gui": "#D7D7FF", "cterm": "189", "cterm16": "0" }, "comment_grey" : { "gui": "#5D8AA8", "cterm": "59", "cterm16": "15" }}
-colorscheme onedark
+set background=dark        " for the light version
+let g:one_allow_italics = 1 " I love italic for comments
+colorscheme one
 
 highlight Normal guibg=none
 highlight NonText guibg=none
