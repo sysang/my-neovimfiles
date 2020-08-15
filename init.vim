@@ -7,7 +7,7 @@ let g:mapleader=' '
 set iskeyword+=-
 set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab shiftround
-set tags=phptags,jstags,pytags,pylibtags,anytags
+set tags=phptags,jstags,pytags,pysystags,pylibtags,anytags
 set ff=unix
 set list
 set nowrap
