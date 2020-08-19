@@ -266,6 +266,7 @@ autocmd BufWritePost *__md2nb.md :call Sync_Markdown_Ipybn()
 endif
 
 autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType markdown set tabstop=2 shiftwidth=2 softtabstop=2
 
 " DEOPLETE CONFIGURATION
 "
