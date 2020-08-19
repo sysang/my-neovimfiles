@@ -20,7 +20,7 @@ set completeopt-=preview
 
 "set foldmethod=manual nofoldenable
 set foldmethod=indent
-set foldlevelstart=1
+set foldlevelstart=3
 set foldnestmax=3
 
 let g:vim_json_syntax_conceal = 0
@@ -264,6 +264,8 @@ if executable('jupytext')
 autocmd BufRead,BufNewFile *__md2nb.md :call Create_New_Ipynb()
 autocmd BufWritePost *__md2nb.md :call Sync_Markdown_Ipybn()
 endif
+
+autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 " DEOPLETE CONFIGURATION
 "
