@@ -68,9 +68,6 @@ nnoremap <leader>i i<Space><Esc>i
 nnoremap <S-k> k<S-j>
 inoremap <C-j> <CR><C-o><S-o>
 
-nnoremap <leader>gc :ccl<cr>
-nnoremap <leader>go :copen<cr><C-w><C-o>
-
 nnoremap zl <nop>
 nnoremap zh <nop>
 nnoremap zl zL
@@ -84,8 +81,6 @@ nnoremap tt gt
 nnoremap tn :tabnew<cr>
 nnoremap tl :lclose<cr>
 
-nnoremap gn :lnext <cr> : normal! zz <cr>
-nnoremap gp :lprevious <cr> : normal! zz <cr>
 
 " save automatically when text is changed
 set updatetime=1500
@@ -305,5 +300,19 @@ nnoremap <leader>gl :Gllog<cr>
 
 "USAGE OF: FERRET PLUGIN
 "
+
+function Get_ferret_executable()
+  return ferret#private#executable()
+endfunction
+
+let g:FerretExecutable='rg'
+nnoremap <leader>a <nop>
+nmap <leader>a <Plug>(FerretLack)
 nnoremap <leader>s <nop>
 nnoremap <leader>s :Lack -w <C-r><C-w><CR>
+
+nnoremap gn :lnext <cr> : normal! zz <cr>
+nnoremap gp :lprevious <cr> : normal! zz <cr>
+nnoremap <leader>gc :lclose<cr>
+nnoremap <leader>go :lopen<cr><C-w><C-o>
+
