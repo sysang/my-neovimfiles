@@ -110,6 +110,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'tpope/vim-jdaddy'
 
 Plug 'elzr/vim-json'
 Plug 'othree/html5.vim'
