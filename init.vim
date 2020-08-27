@@ -120,6 +120,8 @@ Plug 'plasticboy/vim-markdown'
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'dense-analysis/ale'
+
 " Has been downloaded to make some tweaks
 " Plug 'iCyMind/NeoSolarized'
 " Plug 'rakr/vim-one'
@@ -317,4 +319,3 @@ nnoremap gn :lnext <cr> : normal! zz <cr>
 nnoremap gp :lprevious <cr> : normal! zz <cr>
 nnoremap <leader>gc :lclose<cr>
 nnoremap <leader>go :lopen<cr><C-w><C-o>
-
