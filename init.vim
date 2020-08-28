@@ -95,6 +95,8 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'wincent/ferret'
 
+Plug 'dense-analysis/ale'
+
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 "Plug 'deoplete-plugins/deoplete-tag'
@@ -111,6 +113,7 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-jdaddy'
+Plug 'terryma/vim-multiple-cursors'
 
 Plug 'elzr/vim-json'
 Plug 'othree/html5.vim'
@@ -119,8 +122,6 @@ Plug 'vim-python/python-syntax'
 Plug 'plasticboy/vim-markdown'
 
 Plug 'tpope/vim-fugitive'
-
-Plug 'dense-analysis/ale'
 
 " Has been downloaded to make some tweaks
 " Plug 'iCyMind/NeoSolarized'
@@ -319,3 +320,12 @@ nnoremap gn :lnext <cr> : normal! zz <cr>
 nnoremap gp :lprevious <cr> : normal! zz <cr>
 nnoremap <leader>gc :lclose<cr>
 nnoremap <leader>go :lopen<cr><C-w><C-o>
+
+" VIM-MULTIPLE-CURSORS CONFIGURATION
+
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_word_key = '<C-m>'
+let g:multi_cursor_next_key  = '<C-n>'
+let g:multi_cursor_prev_key  = '<C-p>'
+let g:multi_cursor_skip_key  = '<C-x>'
+let g:multi_cursor_quit_key  = '<C-[>'
