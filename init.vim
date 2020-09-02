@@ -91,7 +91,7 @@ call plug#begin('~/.config/nvim/.plugged')
 
 Plug 'skywind3000/asyncrun.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'wincent/ferret'
 
