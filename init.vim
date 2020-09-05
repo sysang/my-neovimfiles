@@ -213,6 +213,8 @@ highlight NonText guibg=none
 "    autocmd BufRead,BufNewFile *.profile set filetype=php
 "    autocmd BufRead,BufNewFile *.view set filetype=php
 "augroup END
+"
+"
 
 "ADD TAG TO DICTIONARY, ADD DICTIONARY TO CTRL+N
 autocmd BufRead,BufNewFile * setlocal dictionary+=anytags
@@ -279,6 +281,7 @@ autocmd FileType markdown set tabstop=2 shiftwidth=2 softtabstop=2
 "
 autocmd FileType markdown setlocal commentstring=#\ %s
 
+
 " VIM-FUGITIVE CONFIGURATION FOR USAGE
 "
 " NOTE: 
@@ -303,6 +306,7 @@ nnoremap <leader>gg :vertical:Git<cr>
 nnoremap <leader>gd :Gdiffsplit<cr> :setlocal nomodifiable<cr>
 nnoremap <leader>gl :Gllog<cr>
 
+
 "USAGE OF: FERRET PLUGIN
 "
 
@@ -321,6 +325,7 @@ nnoremap gp :lprevious <cr> : normal! zz <cr>
 nnoremap <leader>gc :lclose<cr>
 nnoremap <leader>go :lopen<cr><C-w><C-o>
 
+
 " VIM-MULTIPLE-CURSORS CONFIGURATION
 
 let g:multi_cursor_use_default_mapping=0
@@ -329,3 +334,9 @@ let g:multi_cursor_next_key  = '<C-n>'
 let g:multi_cursor_prev_key  = '<C-p>'
 let g:multi_cursor_skip_key  = '<C-x>'
 let g:multi_cursor_quit_key  = '<C-[>'
+
+
+" DENSE-ANALISIS/ALE configuration
+"
+let g:ale_linters = {'python': []}
+autocmd FileType python let b:ale_linters = ['flake8']
