@@ -14,7 +14,7 @@ set nowrap
 set backupdir=~/.vim/backup
 set undodir=~/.vim/undo
 set directory=~/.vim/swp
-set virtualedit=all
+" set virtualedit=all
 
 "https://stackoverflow.com/questions/15962421/how-can-i-disable-scratch-preview-window
 set completeopt-=preview
@@ -75,8 +75,6 @@ nnoremap zl zL
 nnoremap zh zH
 nnoremap <leader>zl z20l
 nnoremap <leader>zh z20h
-
-nnoremap <leader>w :cd C:\Users\dsysang\workspace<cr>:NERDTree <cr>
 
 nnoremap tt gt
 nnoremap tn :tabnew<cr>
