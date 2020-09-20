@@ -338,3 +338,10 @@ let g:multi_cursor_quit_key  = '<C-[>'
 "
 let g:ale_linters = {'python': []}
 autocmd FileType python let b:ale_linters = ['flake8']
+
+" VIMR
+"
+if has("gui_vimr")
+  " Here goes some VimR specific settings like
+  cd /Users/sangdao/workspace
+endif
