@@ -348,3 +348,10 @@ set splitright
 let g:neoterm_default_mod = 'vertical'
 nnoremap <leader>tt :Tnew<cr>
 nnoremap <F5> :<c-u>exec 'T clear && ' . g:myneotermexecutable . ' ' . @% <cr>
+
+" VIMR
+"
+if has("gui_vimr")
+  " Here goes some VimR specific settings like
+  cd /Users/sangdao/workspace
+endif
