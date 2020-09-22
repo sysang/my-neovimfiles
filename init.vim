@@ -92,6 +92,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'wincent/ferret'
+Plug 'kassio/neoterm'
 
 Plug 'dense-analysis/ale'
 
@@ -339,3 +340,11 @@ let g:multi_cursor_quit_key  = '<C-[>'
 "
 let g:ale_linters = {'python': []}
 autocmd FileType python let b:ale_linters = ['flake8']
+
+" NEOTERM configuration
+"
+let g:myneotermexecutable = '/usr/bin/python3'
+set splitright
+let g:neoterm_default_mod = 'vertical'
+nnoremap <leader>tt :Tnew<cr>
+nnoremap <F5> :<c-u>exec 'T clear && ' . g:myneotermexecutable . ' ' . @% <cr>
