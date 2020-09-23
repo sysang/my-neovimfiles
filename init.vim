@@ -343,11 +343,11 @@ autocmd FileType python let b:ale_linters = ['flake8']
 
 " NEOTERM configuration
 "
-let g:myneotermexecutable = '/usr/bin/python3'
 set splitright
 let g:neoterm_default_mod = 'vertical'
 nnoremap <leader>tt :Tnew<cr>
-nnoremap <F5> :<c-u>exec 'T clear && ' . g:myneotermexecutable . ' ' . @% <cr>
+nnoremap <leader>tq :Tclose<cr>
+nnoremap <F5> :<c-u>exec 'T clear && make neoterm'<cr>
 
 " VIMR
 "
