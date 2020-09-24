@@ -347,9 +347,9 @@ let g:neoterm_repl_command = '/usr/bin/python3'
 set splitright
 let g:neoterm_default_mod = 'vertical'
 nnoremap <leader>tt :Tnew<cr>
-nnoremap <leader>tk :TcloseAll!<cr>
 nnoremap <leader>tl :TREPLSendLine<cr>
-nnoremap <F5> :exec '1T clear && make neoterm'<cr>
+nnoremap <F5> :TcloseAll!<cr>
+map <F4> :execute 'T make neoterm'<cr>
 
 " VIMR
 "
