@@ -32,6 +32,17 @@ nnoremap <leader>tph :AsyncRun ctags --langmap=php:.engine.inc.module.theme.inst
 nnoremap <leader>tpy :AsyncRun ctags --python-kinds=-iv --languages=python --recurse --fields=+l -f pytags . <CR>
 nnoremap <leader>tag :AsyncRun ctags --recurse -f anytags . <CR>
 
+nnoremap # <nop>
+nnoremap # @@.
+
+nnoremap s <nop>
+let @e = "e"
+nnoremap s @ea
+
+nnoremap R <nop>
+let @b = "b"
+nnoremap R @bi
+
 nnoremap K <nop>
 nnoremap t <nop>
 nnoremap <C-j> <nop>
@@ -105,7 +116,6 @@ Plug 'dense-analysis/ale'
 "https://github.com/davidhalter/jedi
 "Plug 'deoplete-plugins/deoplete-jedi'
 
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
@@ -113,6 +123,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-jdaddy'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
 
 Plug 'elzr/vim-json'
 Plug 'othree/html5.vim'
