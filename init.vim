@@ -1,4 +1,4 @@
-" START
+ " START
 
 set spell
 set spelllang=en_us
@@ -44,6 +44,8 @@ nnoremap s @ea
 nnoremap R <nop>
 let @b = "b"
 nnoremap R @bi
+
+nnoremap <leader>w P$p
 
 nnoremap K <nop>
 nnoremap t <nop>
