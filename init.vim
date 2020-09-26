@@ -35,6 +35,8 @@ nnoremap <leader>tag :AsyncRun ctags --recurse -f anytags . <CR>
 nnoremap # <nop>
 nnoremap # @@.
 
+let @n = 'n;.'
+
 nnoremap s <nop>
 let @e = "e"
 nnoremap s @ea
