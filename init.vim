@@ -76,8 +76,8 @@ vmap <leader>a "ay<CR>
 nnoremap <leader>v "ap
 nnoremap <leader>d yyp
 
-nnoremap <leader>; A;<ESC>
-nnoremap <leader>, A,<ESC>
+nnoremap <leader>; A:<ESC>^
+nnoremap <leader>, A,<ESC>^
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 nnoremap <leader>i i<Space><Esc>i
