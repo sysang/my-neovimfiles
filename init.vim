@@ -134,7 +134,7 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'vim-python/python-syntax'
 Plug 'plasticboy/vim-markdown'
-Plug 'Raku/vim-raku'
+Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'tpope/vim-fugitive'
 
@@ -278,8 +278,8 @@ function Create_New_Ipynb()
 endfunction
 
 if executable('jupytext')
-autocmd BufRead,BufNewFile *__md2nb.md :call Create_New_Ipynb()
-autocmd BufWritePost *__md2nb.md :call Sync_Markdown_Ipybn()
+autocmd BufRead,BufNewFile *__2nb__.md :call Create_New_Ipynb()
+autocmd BufWritePost *__2nb__.md :call Sync_Markdown_Ipybn()
 endif
 
 autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
