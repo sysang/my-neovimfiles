@@ -107,7 +107,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'wincent/ferret'
-Plug 'kassio/neoterm'
+
+" Since tmux is so perfect
+" Plug 'kassio/neoterm'
 
 Plug 'dense-analysis/ale'
 
