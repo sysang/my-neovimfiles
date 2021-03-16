@@ -139,6 +139,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'tpope/vim-fugitive'
+Plug 'dandavison/delta'
 
 " Has been downloaded to make some tweaks
 " Plug 'iCyMind/NeoSolarized'
