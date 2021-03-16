@@ -114,7 +114,6 @@ Plug 'wincent/ferret'
 Plug 'dense-analysis/ale'
 
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 "Plug 'deoplete-plugins/deoplete-tag'
 
 "Required:
@@ -128,13 +127,15 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-jdaddy'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
+
+" Plug 'terryma/vim-multiple-cursors'
+
+Plug 'vim-python/python-syntax'
 
 Plug 'elzr/vim-json'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'vim-python/python-syntax'
 Plug 'plasticboy/vim-markdown'
 Plug 'peitalin/vim-jsx-typescript'
 
@@ -331,7 +332,7 @@ function Get_ferret_executable()
   return ferret#private#executable()
 endfunction
 
-let g:FerretExecutable='rg'
+let g:FerretExecutable='rg,ag'
 nnoremap <leader>a <nop>
 nmap <leader>a <Plug>(FerretLack)
 nnoremap <leader>s <nop>
