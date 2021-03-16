@@ -45,8 +45,6 @@ nnoremap R <nop>
 let @b = "b"
 nnoremap R @bi
 
-nnoremap <leader>w P$p
-
 nnoremap K <nop>
 nnoremap t <nop>
 nnoremap <C-j> <nop>
@@ -97,12 +95,13 @@ nnoremap tl :lclose<cr>
 
 
 " save automatically when text is changed
-set updatetime=1500
+set updatetime=60000
 au CursorHold * silent! update
 
 call plug#begin('~/.config/nvim/.plugged')
 
 Plug 'skywind3000/asyncrun.vim'
+
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -159,6 +158,7 @@ let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeHighlightCursorline = 1
 let g:NERDTreeCascadeOpenSingleChildDir = 0
 let g:NERDTreeCascadeSingleChildDir = 0
+
 let g:NERDTreeStatusline="\ %-28{matchstr(getline('.'), '\\(\\s\\)\\?\\zs\\(\\/\\)\\?\\w\\(.*\\)')}"
 let g:NERDTreeWinSize=40
 
@@ -184,6 +184,7 @@ aug END
 nnoremap <silent> <c-j> :FZF --tiebreak=begin,length,index<cr>
 nnoremap <silent> <c-k> :Buffers<cr>
 nnoremap <silent> <c-n> :BLines<cr>
+nnoremap <silent> <c-N> :Rg<cr>
 
 syntax on
 " set termguicolors
@@ -346,12 +347,12 @@ nnoremap <leader>go :lopen<cr><C-w><C-o>
 
 " VIM-MULTIPLE-CURSORS CONFIGURATION
 
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_start_word_key = '<C-h>'
-let g:multi_cursor_next_key  = '<C-n>'
-let g:multi_cursor_prev_key  = '<C-p>'
-let g:multi_cursor_skip_key  = '<C-x>'
-let g:multi_cursor_quit_key  = '<C-[>'
+" let g:multi_cursor_use_default_mapping=0
+" let g:multi_cursor_start_word_key = '<C-h>'
+" let g:multi_cursor_next_key  = '<C-n>'
+" let g:multi_cursor_prev_key  = '<C-p>'
+" let g:multi_cursor_skip_key  = '<C-x>'
+" let g:multi_cursor_quit_key  = '<C-[>'
 
 
 " DENSE-ANALISIS/ALE configuration
