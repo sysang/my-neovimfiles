@@ -93,6 +93,8 @@ nnoremap tt gt
 nnoremap tn :tabnew<cr>
 nnoremap tl :lclose<cr>
 
+nnoremap <C-h> <nop>
+nnoremap <C-h> :HopChar2<cr>
 
 " save automatically when text is changed
 set updatetime=60000
@@ -123,12 +125,17 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
+" Plug 'SirVer/ultisnips'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-commentary'
 
 " Plug 'terryma/vim-multiple-cursors'
+
+" bat supports syntax highlighting for a large number of programming and markup languages:
+" https://github.com/sharkdp/bat
+" Plug 'sharkdp/bat'
 
 Plug 'vim-python/python-syntax'
 
@@ -141,7 +148,9 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'tpope/vim-fugitive'
 Plug 'dandavison/delta'
 
-" Has been downloaded to make some tweaks
+Plug 'phaazon/hop.nvim'
+
+" Having been downloaded to make some tweaks
 " Plug 'iCyMind/NeoSolarized'
 " Plug 'rakr/vim-one'
 
