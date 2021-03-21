@@ -93,8 +93,8 @@ nnoremap tt gt
 nnoremap tn :tabnew<cr>
 nnoremap tl :lclose<cr>
 
-nnoremap <C-h> <nop>
-nnoremap <C-h> :HopChar2<cr>
+nnoremap f  <nop>
+nnoremap f :HopChar2<cr>
 
 " save automatically when text is changed
 set updatetime=60000
@@ -109,8 +109,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'wincent/ferret'
 
-" Since tmux is so perfect
-" Plug 'kassio/neoterm'
+Plug 'kassio/neoterm'
 
 Plug 'dense-analysis/ale'
 
@@ -194,7 +193,7 @@ aug END
 nnoremap <silent> <c-j> :FZF --tiebreak=begin,length,index<cr>
 nnoremap <silent> <c-k> :Buffers<cr>
 nnoremap <silent> <c-n> :BLines<cr>
-nnoremap <silent> <c-N> :Rg<cr>
+nnoremap <silent> <leader>n :Rg<cr>
 
 syntax on
 " set termguicolors
