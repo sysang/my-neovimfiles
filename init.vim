@@ -15,6 +15,7 @@ set backupdir=~/.vim/backup
 set undodir=~/.vim/undo
 set directory=~/.vim/swp
 " set virtualedit=all
+let g:python3_host_prog="/usr/bin/python3.8"
 
 "https://stackoverflow.com/questions/15962421/how-can-i-disable-scratch-preview-window
 set completeopt-=preview
@@ -113,13 +114,13 @@ Plug 'kassio/neoterm'
 
 Plug 'dense-analysis/ale'
 
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'deoplete-plugins/deoplete-tag'
 
 "Required:
 "https://github.com/neovim/python-client
 "https://github.com/davidhalter/jedi
-"Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-jedi'
 
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
@@ -300,10 +301,10 @@ autocmd FileType markdown set tabstop=2 shiftwidth=2 softtabstop=2
 
 " DEOPLETE CONFIGURATION
 "
-"let g:deoplete#enable_at_startup = 1
-"call deoplete#custom#option('min_pattern_length', 3) 
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('min_pattern_length', 3) 
 "call deoplete#custom#option('sources', {  '_': ['buffer', 'tag', 'ultisnips']})
-"let g:deoplete#sources#jedi#enable_typeinfo = 0
+let g:deoplete#sources#jedi#enable_typeinfo = 0
 
 " VIM-COMMENTARY CONFIGURATION
 "
