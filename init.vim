@@ -96,7 +96,7 @@ nnoremap tn :tabnew<cr>
 nnoremap tl :lclose<cr>
 
 nnoremap ,  <nop>
-nnoremap , :HopChar2<cr>
+nnoremap <silent> , :HopChar2<cr>
 
 " save automatically when text is changed
 set updatetime=60000
