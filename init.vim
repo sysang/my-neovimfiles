@@ -46,8 +46,6 @@ nnoremap R <nop>
 let @b = "b"
 nnoremap R @bi
 
-nnoremap K <nop>
-nnoremap t <nop>
 nnoremap <C-j> <nop>
 inoremap <C-j> <nop>
 nnoremap <C-k> <nop>
@@ -80,8 +78,10 @@ nnoremap <leader>, A,<ESC>^
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 nnoremap <leader>i i<Space><Esc>i
-nnoremap <S-k> k<S-j>
 inoremap <C-j> <CR><C-o><S-o>
+
+nnoremap K <nop>
+nnoremap K k<S-j>
 
 nnoremap zl <nop>
 nnoremap zh <nop>
@@ -90,12 +90,13 @@ nnoremap zh zH
 nnoremap <leader>zl z20l
 nnoremap <leader>zh z20h
 
+nnoremap t <nop>
 nnoremap tt gt
 nnoremap tn :tabnew<cr>
 nnoremap tl :lclose<cr>
 
-nnoremap f  <nop>
-nnoremap f :HopChar2<cr>
+nnoremap ,  <nop>
+nnoremap , :HopChar2<cr>
 
 " save automatically when text is changed
 set updatetime=60000
