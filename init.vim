@@ -129,7 +129,6 @@ Plug 'tpope/vim-surround'
 " Plug 'SirVer/ultisnips'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-commentary'
 
 " Plug 'terryma/vim-multiple-cursors'
@@ -140,16 +139,16 @@ Plug 'tpope/vim-commentary'
 
 Plug 'vim-python/python-syntax'
 
+Plug 'tpope/vim-jdaddy'
 Plug 'elzr/vim-json'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'plasticboy/vim-markdown'
 Plug 'peitalin/vim-jsx-typescript'
+
+Plug 'plasticboy/vim-markdown'
 
 Plug 'tpope/vim-fugitive'
 Plug 'dandavison/delta'
-
-Plug 'phaazon/hop.nvim'
 
 " Having been downloaded to make some tweaks
 " Plug 'iCyMind/NeoSolarized'
@@ -376,6 +375,7 @@ autocmd FileType python let b:ale_linters = ['flake8']
 let g:neoterm_repl_command = '/usr/bin/python3'
 set splitright
 let g:neoterm_default_mod = 'vertical'
+
 nnoremap <leader>tt :Tnew<cr>
 nnoremap <leader>tl :TREPLSendLine<cr>
 nnoremap <F5> :TcloseAll!<cr>
