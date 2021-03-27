@@ -110,6 +110,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'wincent/ferret'
+Plug 'phaazon/hop.nvim'
 
 Plug 'kassio/neoterm'
 
@@ -194,7 +195,7 @@ aug END
 nnoremap <silent> <c-j> :FZF --tiebreak=begin,length,index<cr>
 nnoremap <silent> <c-k> :Buffers<cr>
 nnoremap <silent> <c-n> :BLines<cr>
-nnoremap <silent> <leader>n :Rg<cr>
+nnoremap <silent> <c-h> :Rg<cr>
 
 syntax on
 " set termguicolors
