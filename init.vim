@@ -1,6 +1,7 @@
  " START
 
-set spell
+" set spell
+set nospell
 set spelllang=en_us
 set relativenumber number numberwidth=3
 let g:mapleader=' '
