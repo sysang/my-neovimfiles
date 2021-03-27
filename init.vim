@@ -109,8 +109,9 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'wincent/ferret'
 Plug 'phaazon/hop.nvim'
+" Plug 'wincent/ferret'
+Plug 'jremmen/vim-ripgrep'
 
 Plug 'kassio/neoterm'
 
@@ -131,6 +132,7 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-commentary'
+Plug 'Yggdroot/indentLine'
 
 " Plug 'terryma/vim-multiple-cursors'
 
@@ -251,10 +253,17 @@ autocmd BufRead,BufNewFile * setlocal dictionary+=anytags
 set complete+=k
 
 " The Silver Searcher
-" git@github.com:sysang/my-neovimfiles.git
-if executable('ag')
+" https://github.com/ggreer/the_silver_searcher
+" if executable('ag')
 " Use ag over grep
-set grepprg=ag\ --nogroup\ --nocolor
+" set grepprg=ag\ --nogroup\ --nocolor
+" endif
+"
+" The ripgrep Searcher
+" https://github.com/BurntSushi/ripgrep
+if executable('rg')
+" Use rg over grep
+    set grepprg=rg\ -n\ -w
 endif
 
 " Plugin key-mappings.
@@ -344,16 +353,17 @@ function Get_ferret_executable()
   return ferret#private#executable()
 endfunction
 
-let g:FerretExecutable='rg,ag'
-nnoremap <leader>a <nop>
-nmap <leader>a <Plug>(FerretLack)
-nnoremap <leader>s <nop>
-nnoremap <leader>s :Lack -w <C-r><C-w><CR>
+" let g:FerretExecutable='ag'
+let g:FerretExecutable='rg'
+" nnoremap <leader>a <nop>
+" nmap <leader>a <Plug>(FerretLack)
+" nnoremap <leader>s <nop>
+" nmap <leader>s <Plug>(FerretAck)
 
-nnoremap gn :lnext <cr> : normal! zz <cr>
-nnoremap gp :lprevious <cr> : normal! zz <cr>
-nnoremap <leader>gc :lclose<cr>
-nnoremap <leader>go :lopen<cr><C-w><C-o>
+nnoremap gn :cn <cr> : normal! zz <cr>
+nnoremap gp :cp <cr> : normal! zz <cr>
+nnoremap <leader>gc :cclose<cr>
+nnoremap <leader>go :copen<cr>
 
 
 " VIM-MULTIPLE-CURSORS CONFIGURATION
