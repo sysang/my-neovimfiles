@@ -16,7 +16,7 @@ set backupdir=~/.vim/backup
 set undodir=~/.vim/undo
 set directory=~/.vim/swp
 " set virtualedit=all
-let g:python3_host_prog="/usr/bin/python3.8"
+let g:python3_host_prog="python3"
 
 "https://stackoverflow.com/questions/15962421/how-can-i-disable-scratch-preview-window
 set completeopt-=preview
