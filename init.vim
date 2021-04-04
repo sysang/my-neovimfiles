@@ -118,8 +118,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'deoplete-plugins/deoplete-tag'
 
 "Required:
-"https://github.com/neovim/python-client
-"https://github.com/davidhalter/jedi
+"https://github.com/neovim/python-client -> pip3 install pynvim
+"https://github.com/davidhalter/jedi -> pip3 install jedi
 Plug 'deoplete-plugins/deoplete-jedi'
 
 Plug 'tpope/vim-repeat'
@@ -144,6 +144,7 @@ Plug 'elzr/vim-json'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'tpope/vim-markdown'
 
 Plug 'tpope/vim-fugitive'
 Plug 'dandavison/delta'
