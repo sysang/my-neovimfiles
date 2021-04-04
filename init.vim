@@ -26,10 +26,6 @@ set foldmethod=indent
 set foldlevelstart=3
 set foldnestmax=3
 
-let g:vim_json_syntax_conceal = 0
-let g:markdown_syntax_conceal = 0
-let g:markdown_fenced_languages = ['python', 'bash=sh']
-
 nnoremap <leader>tph :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags . <CR>
 nnoremap <leader>tpy :AsyncRun ctags --python-kinds=-iv --languages=python --recurse --fields=+l -f pytags . <CR>
 nnoremap <leader>tag :AsyncRun ctags --recurse -f anytags . <CR>
@@ -149,8 +145,6 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'peitalin/vim-jsx-typescript'
 
-Plug 'plasticboy/vim-markdown'
-
 Plug 'tpope/vim-fugitive'
 Plug 'dandavison/delta'
 
@@ -160,6 +154,10 @@ Plug 'dandavison/delta'
 
 " Initialize plugin system
 call plug#end()
+
+let g:vim_json_syntax_conceal = 0
+let g:markdown_syntax_conceal = 0
+let g:markdown_fenced_languages = ['python', 'bash=sh']
 
 " NERDTree settings
 nnoremap <C-p> <nop>
