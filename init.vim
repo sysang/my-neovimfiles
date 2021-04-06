@@ -125,9 +125,6 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
-" Plug 'SirVer/ultisnips'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
 
@@ -148,6 +145,11 @@ Plug 'tpope/vim-markdown'
 
 Plug 'tpope/vim-fugitive'
 Plug 'dandavison/delta'
+
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'Shougo/neosnippet.vim'  " Plug 'SirVer/ultisnips'
+Plug 'Shougo/neosnippet-snippets'
 
 " Having been downloaded to make some tweaks
 " Plug 'iCyMind/NeoSolarized'
@@ -282,6 +284,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 let g:neosnippet#snippets_directory='/home/sysang/.config/nvim/snippets'
+let g:neosnippet#enable_snipmate_compatibility = 1
 
 " FOR JUPYTER NOTEBOOK EDITING:
 "
