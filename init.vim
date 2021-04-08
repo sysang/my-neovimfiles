@@ -196,7 +196,12 @@ aug user:autocmd:nerdtree
   au Filetype nerdtree setlocal nolist
 aug END
 
-nnoremap <silent> <c-j> :FZF --tiebreak=begin,length,index<cr>
+" FZF CONFIGURATION
+"
+
+command! MYFZF call fzf#run(fzf#wrap({'source': 'git ls-files'}))
+" nnoremap <silent> <c-j> :FZF --tiebreak=begin,length,index<cr>
+nnoremap <silent> <c-j> :MYFZF<cr>
 nnoremap <silent> <c-k> :Buffers<cr>
 nnoremap <silent> <c-n> :BLines<cr>
 nnoremap <silent> <c-h> :Rg<cr>
