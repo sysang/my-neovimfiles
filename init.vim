@@ -317,6 +317,7 @@ endif
 autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType markdown set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType javascriptreact set tabstop=2 shiftwidth=2 softtabstop=2
 
 " DEOPLETE CONFIGURATION
 "
