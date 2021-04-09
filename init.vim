@@ -397,10 +397,12 @@ let g:neoterm_repl_command = '/usr/bin/python3'
 set splitright
 let g:neoterm_default_mod = 'vertical'
 
+let g:execute_cmd_str = 'T make neoterm'
+
 nnoremap <leader>tt :Tnew<cr>
 nnoremap <leader>tl :TREPLSendLine<cr>
 nnoremap <F5> :TcloseAll!<cr>
-map <F4> :execute 'T make neoterm'<cr>
+map <F4> :execute g:execute_cmd_str<cr>
 
 " VIMR
 "
