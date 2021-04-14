@@ -110,17 +110,17 @@ Plug 'phaazon/hop.nvim'
 " Plug 'wincent/ferret'
 Plug 'jremmen/vim-ripgrep'
 
-Plug 'kassio/neoterm'
+" Plug 'kassio/neoterm'
 
 Plug 'dense-analysis/ale'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'deoplete-plugins/deoplete-tag'
 
 "Required:
 "https://github.com/neovim/python-client -> pip3 install pynvim
 "https://github.com/davidhalter/jedi -> pip3 install jedi
-Plug 'deoplete-plugins/deoplete-jedi'
+" Plug 'deoplete-plugins/deoplete-jedi'
 
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
@@ -165,6 +165,7 @@ let g:markdown_fenced_languages = ['python', 'bash=sh']
 " NERDTree settings
 nnoremap <C-p> <nop>
 nnoremap <C-p> :NERDTreeToggle <CR>
+nnoremap <leader>p :NERDTreeToggle <CR>
 nnoremap <leader>nt :NERDTree <CR>
 nnoremap <leader>f  :NERDTreeFind <CR>
 
@@ -315,10 +316,10 @@ autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
 
 " DEOPLETE CONFIGURATION
 "
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('min_pattern_length', 3) 
+" let g:deoplete#enable_at_startup = 1
+" call deoplete#custom#option('min_pattern_length', 3) 
 "call deoplete#custom#option('sources', {  '_': ['buffer', 'tag', 'ultisnips']})
-let g:deoplete#sources#jedi#enable_typeinfo = 0
+" let g:deoplete#sources#jedi#enable_typeinfo = 0
 
 " VIM-COMMENTARY CONFIGURATION
 "
@@ -387,9 +388,9 @@ autocmd FileType python let b:ale_linters = ['flake8']
 
 " NEOTERM configuration
 "
-let g:neoterm_repl_command = '/usr/bin/python3'
-set splitright
-let g:neoterm_default_mod = 'vertical'
+" let g:neoterm_repl_command = '/usr/bin/python3'
+" set splitright
+" let g:neoterm_default_mod = 'vertical'
 
 nnoremap <leader>tt :Tnew<cr>
 nnoremap <leader>tl :TREPLSendLine<cr>
