@@ -402,7 +402,7 @@ let g:execute_cmd_str = 'T make neoterm'
 nnoremap <leader>tt :Tnew<cr>
 nnoremap <leader>tl :TREPLSendLine<cr>
 nnoremap <F5> :TcloseAll!<cr>
-map <F4> :execute g:execute_cmd_str<cr>
+map <F4> :silent execute g:execute_cmd_str<cr>
 
 " VIMR
 "
