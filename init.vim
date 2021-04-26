@@ -156,6 +156,7 @@ Plug 'Shougo/neosnippet-snippets'
 " Plug 'rakr/vim-one'
 
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
 
 " Initialize plugin system
 call plug#end()
@@ -244,7 +245,8 @@ let g:neosolarized_italic = 1
 
 " colorscheme one
 " colorscheme NeoSolarized
-colorscheme dracula
+" colorscheme dracula
+colorscheme gruvbox
 
 highlight Normal guibg=none
 highlight NonText guibg=none
