@@ -207,13 +207,15 @@ nnoremap <silent> <c-n> :BLines<cr>
 nnoremap <silent> <c-h> :Rg<cr>
 
 syntax on
-" set termguicolors
-" Fix wrong color in mosh
-set notermguicolors
+set termguicolors
 
-" NeoSolarized settings
-" colorscheme NeoSolarized
- set synmaxcol=300
+" Fix wrong color in mosh
+" set notermguicolors
+
+" NEOSOLARIZED THEME SETTINGS
+
+colorscheme NeoSolarized
+set synmaxcol=300
 
 " default value is 'normal', Setting this option to 'high' or 'low' does use the 
 " same Solarized palette but simply shifts some values up or down in order to 
@@ -235,9 +237,10 @@ let g:neosolarized_bold = 1
 let g:neosolarized_underline = 1
 let g:neosolarized_italic = 1
 
-set background=dark        " for the light version
-let g:one_allow_italics = 1 " I love italic for comments
-colorscheme one
+" NEO THEME SETTINGS
+" set background=dark        " for the light version
+" let g:one_allow_italics = 1 " I love italic for comments
+" colorscheme one
 
 highlight Normal guibg=none
 highlight NonText guibg=none
