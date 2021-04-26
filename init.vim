@@ -155,6 +155,8 @@ Plug 'Shougo/neosnippet-snippets'
 " Plug 'iCyMind/NeoSolarized'
 " Plug 'rakr/vim-one'
 
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 " Initialize plugin system
 call plug#end()
 
@@ -214,7 +216,6 @@ set termguicolors
 
 " NEOSOLARIZED THEME SETTINGS
 
-colorscheme NeoSolarized
 set synmaxcol=300
 
 " default value is 'normal', Setting this option to 'high' or 'low' does use the 
@@ -240,7 +241,10 @@ let g:neosolarized_italic = 1
 " NEO THEME SETTINGS
 " set background=dark        " for the light version
 " let g:one_allow_italics = 1 " I love italic for comments
+
 " colorscheme one
+" colorscheme NeoSolarized
+colorscheme dracula
 
 highlight Normal guibg=none
 highlight NonText guibg=none
