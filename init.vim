@@ -132,7 +132,7 @@ Plug 'Yggdroot/indentLine'
 
 " bat supports syntax highlighting for a large number of programming and markup languages:
 " https://github.com/sharkdp/bat
-" Plug 'sharkdp/bat'
+Plug 'sharkdp/bat'
 
 Plug 'vim-python/python-syntax'
 
@@ -325,6 +325,7 @@ endif
 
 autocmd FileType yaml set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType markdown set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType markdown syn match markdownError "\w\@<=\w\@="
 autocmd FileType javascript set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascriptreact set tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
