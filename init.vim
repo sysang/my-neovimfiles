@@ -31,7 +31,7 @@ nnoremap <leader>tpy :AsyncRun ctags --python-kinds=-iv --languages=python --rec
 nnoremap <leader>tag :AsyncRun ctags --recurse -f anytags . <CR>
 
 nnoremap # <nop>
-nnoremap # @@.
+nnoremap # 10@@
 
 let @n = 'n;.'
 
@@ -166,8 +166,8 @@ let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['python', 'bash=sh']
 
 " NERDTree settings
-nnoremap <C-p> <nop>
-nnoremap <C-p> :NERDTreeToggle <CR>
+nnoremap <C-m> <nop>
+nnoremap <C-m> :NERDTreeToggle <CR>
 nnoremap <leader>nt :NERDTree <CR>
 nnoremap <leader>f  :NERDTreeFind <CR>
 
