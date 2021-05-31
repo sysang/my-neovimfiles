@@ -166,8 +166,7 @@ let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['python', 'bash=sh']
 
 " NERDTree settings
-nnoremap <C-m> <nop>
-nnoremap <C-m> :NERDTreeToggle <CR>
+nnoremap <C-w>t :NERDTreeToggle <CR>
 nnoremap <leader>nt :NERDTree <CR>
 nnoremap <leader>f  :NERDTreeFind <CR>
 
