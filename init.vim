@@ -115,7 +115,7 @@ Plug 'kassio/neoterm'
 Plug 'dense-analysis/ale'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-tag'
+" Plug 'deoplete-plugins/deoplete-tag'
 
 "Required:
 "https://github.com/neovim/python-client -> pip3 install pynvim
@@ -333,7 +333,7 @@ autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
 "
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('min_pattern_length', 3) 
-call deoplete#custom#option('sources', {  '_': ['buffer', 'tag', 'ultisnips']})
+" call deoplete#custom#option('sources', {  '_': ['buffer', 'tag', 'ultisnips']})
 " let g:deoplete#sources#jedi#enable_typeinfo = 0
 
 " VIM-COMMENTARY CONFIGURATION
