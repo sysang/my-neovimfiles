@@ -70,7 +70,7 @@ vmap <leader>a "ay<CR>
 nnoremap <leader>v "ap
 nnoremap <leader>d yyp
 
-nnoremap <leader>; A:<ESC>^
+nnoremap <leader>; A;<ESC>^
 nnoremap <leader>, A,<ESC>^
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
@@ -106,7 +106,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'phaazon/hop.nvim'
+" Plug 'phaazon/hop.nvim'
 " Plug 'wincent/ferret'
 Plug 'jremmen/vim-ripgrep'
 
@@ -114,7 +114,7 @@ Plug 'kassio/neoterm'
 
 Plug 'dense-analysis/ale'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'deoplete-plugins/deoplete-tag'
 
 "Required:
@@ -331,8 +331,8 @@ autocmd FileType css set tabstop=2 shiftwidth=2 softtabstop=2
 
 " DEOPLETE CONFIGURATION
 "
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('min_pattern_length', 3) 
+" let g:deoplete#enable_at_startup = 1
+" call deoplete#custom#option('min_pattern_length', 3) 
 " call deoplete#custom#option('sources', {  '_': ['buffer', 'tag', 'ultisnips']})
 " let g:deoplete#sources#jedi#enable_typeinfo = 0
 
@@ -398,8 +398,14 @@ nnoremap <leader>go :copen<cr>
 
 " DENSE-ANALISIS/ALE configuration
 "
+
 let g:ale_linters = {'python': []}
+
+autocmd VimEnter * ALEDisable
 autocmd FileType python let b:ale_linters = ['flake8']
+
+nnoremap <C-w>ll :ALEEnable<cr>
+nnoremap <C-w>l :ALEDisable<cr>
 
 " NEOTERM configuration
 "
@@ -411,8 +417,8 @@ let g:execute_cmd_str = 'T make neoterm'
 
 nnoremap <leader>tt :Tnew<cr>
 nnoremap <leader>tl :TREPLSendLine<cr>
-nnoremap <F5> :TcloseAll!<cr>
-map <F4> :silent execute g:execute_cmd_str<cr>
+nnoremap <leader>tc :TcloseAll!<cr>
+map <leader>te :silent execute g:execute_cmd_str<cr>
 
 " VIMR
 "
