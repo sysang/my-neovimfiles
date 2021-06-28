@@ -92,21 +92,19 @@ nnoremap tt gt
 nnoremap tn :tabnew<cr>
 nnoremap tl :lclose<cr>
 
-nnoremap ,  <nop>
-nnoremap <silent> , :HopChar2<cr>
-
 " save automatically when text is changed
 set updatetime=60000
 au CursorHold * silent! update
 
 call plug#begin('~/.config/nvim/.plugged')
 
+Plug 'neovim/nvim-lspconfig'
 Plug 'skywind3000/asyncrun.vim'
 
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-" Plug 'phaazon/hop.nvim'
+Plug 'phaazon/hop.nvim'
 " Plug 'wincent/ferret'
 Plug 'jremmen/vim-ripgrep'
 
@@ -161,6 +159,11 @@ Plug 'morhetz/gruvbox'
 " Initialize plugin system
 call plug#end()
 
+lua require'hop'.setup()
+nnoremap ,  <nop>
+nmap , <cmd>HopChar2<cr>
+
+
 let g:vim_json_syntax_conceal = 0
 let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['python', 'bash=sh']
@@ -177,7 +180,7 @@ let g:NERDTreeCascadeOpenSingleChildDir = 0
 let g:NERDTreeCascadeSingleChildDir = 0
 
 let g:NERDTreeStatusline="\ %-28{matchstr(getline('.'), '\\(\\s\\)\\?\\zs\\(\\/\\)\\?\\w\\(.*\\)')}"
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=55
 
 if filereadable('mix.exs')
   call add(g:NERDTreeIgnore, '_build')
