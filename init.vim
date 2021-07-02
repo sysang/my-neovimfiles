@@ -100,6 +100,7 @@ call plug#begin('~/.config/nvim/.plugged')
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
