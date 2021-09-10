@@ -141,6 +141,7 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'tpope/vim-markdown'
+Plug 'chrisbra/csv.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'dandavison/delta'
@@ -417,12 +418,13 @@ let g:neoterm_repl_command = '/usr/bin/python3'
 set splitright
 let g:neoterm_default_mod = 'vertical'
 
-let g:execute_cmd_str = 'T make neoterm'
+" let g:execute_cmd_str = 'T make neoterm'
+let g:execute_cmd_str = "!echo 'let g:execute_cmd_str = @executive_command'"
 
 nnoremap <leader>tt :Tnew<cr>
 nnoremap <leader>tl :TREPLSendLine<cr>
 nnoremap <leader>tc :TcloseAll!<cr>
-map <leader>te :silent execute g:execute_cmd_str<cr>
+map <leader>te :execute g:execute_cmd_str<cr>
 
 " VIMR
 "
