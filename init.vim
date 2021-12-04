@@ -268,6 +268,8 @@ highlight NonText guibg=none
 "
 "
 
+autocmd BufRead,BufNewFile *.jl set filetype=txt
+
 "ADD TAG TO DICTIONARY, ADD DICTIONARY TO CTRL+N
 autocmd BufRead,BufNewFile * setlocal dictionary+=anytags
 set complete+=k
