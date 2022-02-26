@@ -60,8 +60,8 @@ nnoremap <leader>h 5b
 nnoremap <leader>l 5w
 inoremap <C-f> <right>
 
-nnoremap <F2> :w<cr>
-inoremap <F2> <Esc>:w<cr>
+nnoremap <F2> :wa<cr>
+inoremap <F2> <Esc>:wa<cr>
 
 vmap <leader>a "ay<CR>
 nnoremap <leader>v "ap
