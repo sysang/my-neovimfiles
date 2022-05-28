@@ -27,7 +27,7 @@ set foldmethod=indent
 set foldlevelstart=3
 set foldnestmax=3
 
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 
 nnoremap <leader>tph :AsyncRun ctags --langmap=php:.engine.inc.module.theme.install.php --php-kinds=cdfi --languages=php --recurse --fields=+l -f phptags . <CR>
 nnoremap <leader>tpy :AsyncRun ctags --python-kinds=-iv --languages=python --recurse --fields=+l -f pytags . <CR>
