@@ -5,6 +5,7 @@ set nospell
 set spelllang=en_us
 set relativenumber number numberwidth=3
 let g:mapleader=' '
+set mouse=
 set iskeyword+=-
 set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab shiftround
