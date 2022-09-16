@@ -181,6 +181,7 @@ let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeHighlightCursorline = 1
 let g:NERDTreeCascadeOpenSingleChildDir = 0
 let g:NERDTreeCascadeSingleChildDir = 0
+let g:NERDTreeMinimalMenu=20
 
 let g:NERDTreeStatusline="\ %-28{matchstr(getline('.'), '\\(\\s\\)\\?\\zs\\(\\/\\)\\?\\w\\(.*\\)')}"
 let g:NERDTreeWinSize=55
