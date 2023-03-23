@@ -134,7 +134,7 @@ let g:NERDTreeCascadeOpenSingleChildDir = 0
 let g:NERDTreeCascadeSingleChildDir = 0
 let g:NERDTreeMinimalMenu=20
 let g:NERDTreeStatusline="\ %-28{matchstr(getline('.'), '\\(\\s\\)\\?\\zs\\(\\/\\)\\?\\w\\(.*\\)')}"
-let g:NERDTreeWinSize=55
+let g:NERDTreeWinSize=45
 
 " FZF CONFIGURATION
 command! MYFZF call fzf#run(fzf#wrap({'source': 'git ls-files'}))
@@ -150,7 +150,7 @@ let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identif
                             \ 'Function', 'Conditional', 'Repeat', 'Operator', 'Structure',
                             \ 'LineNr', 'NonText', 'SignColumn', 'CursorLineNr', 'EndOfBuffer']
 
-nmap <F8> :TagbarToggle
+nmap <F8> :TagbarToggle<cr>
 
 let g:gutentag_file_list_command = 'git ls-files'
 
