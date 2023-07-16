@@ -1,7 +1,7 @@
 " set spell
 set nospell
 set spelllang=en_us
-set relativenumber number numberwidth=3
+" set relativenumber number numberwidth=3
 let g:mapleader=' '
 set mouse=
 set iskeyword+=-
@@ -96,12 +96,17 @@ nnoremap gn :cn <cr> : normal! zz <cr>
 nnoremap gp :cp <cr> : normal! zz <cr>
 nnoremap <leader>gc :cclose<cr>
 nnoremap <leader>go :copen<cr>
+nnoremap <F9> <nop>
+nnoremap <F9> :call ToggleQuickfixList()<cr>
+nnoremap <F10> <nop>
+nnoremap <F10> :set relativenumber! number!<cr>
 
 call plug#begin('~/.config/nvim/.plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
+Plug 'milkypostman/vim-togglelist'
 
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
@@ -111,32 +116,41 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'tpope/vim-markdown'
 
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/tagbar'
-Plug 'phaazon/hop.nvim'
+" Plug 'phaazon/hop.nvim'
 
 Plug 'morhetz/gruvbox'
-Plug 'tribela/vim-transparent'
+" Plug 'tribela/vim-transparent'
 call plug#end()
 
 colorscheme gruvbox
 
 " NERDTree settings
+nnoremap <F3> <nop>
+nnoremap <F3> :NERDTreeToggle <CR>
 nnoremap <C-w>t :NERDTreeToggle <CR>
 nnoremap <leader>nt :NERDTree <CR>
 nnoremap <leader>f  :NERDTreeFind <CR>
 
+let g:markdown_syntax_conceal = 0
+let g:markdown_fenced_languages = ['python']
+
 let g:NERDTreeMinimalUI = 1
+
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeHighlightCursorline = 1
 let g:NERDTreeCascadeOpenSingleChildDir = 0
 let g:NERDTreeCascadeSingleChildDir = 0
 let g:NERDTreeMinimalMenu=20
 let g:NERDTreeStatusline="\ %-28{matchstr(getline('.'), '\\(\\s\\)\\?\\zs\\(\\/\\)\\?\\w\\(.*\\)')}"
-let g:NERDTreeWinSize=45
+let g:NERDTreeWinSize=31
 
 " FZF CONFIGURATION
+let g:fzf_preview_window = ['right:hidden', 'ctrl-/']
 command! MYFZF call fzf#run(fzf#wrap({'source': 'git ls-files'}))
 " nnoremap <silent> <c-j> :FZF --tiebreak=begin,length,index<cr>
 nnoremap <silent> <c-j> :MYFZF<cr>
@@ -153,10 +167,13 @@ let g:transparent_groups = ['Normal', 'Comment', 'Constant', 'Special', 'Identif
 nmap <F8> :TagbarToggle<cr>
 
 let g:gutentag_file_list_command = 'git ls-files'
+let g:gutentag_generate_on_missing = 0
+let g:gutentag_generate_on_new = 0
+let g:gutentag_generate_on_write = 0
 
-lua require'hop'.setup()
-nnoremap <c-h> :<nop>
-nnoremap <c-h> :HopChar2<cr>
+" lua require'hop'.setup()
+" nnoremap <c-h> :<nop>
+" nnoremap <c-h> :HopChar2<cr>
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
