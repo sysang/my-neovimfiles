@@ -36,6 +36,7 @@ highlight Normal guibg=none
 highlight NonText guibg=none
 
 
+let g:indentLine_setConceal=0
 autocmd Filetype json setlocal conceallevel=0
 autocmd Filetype json let g:indentline_setConceal=0
 
