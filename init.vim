@@ -120,6 +120,8 @@ Plug 'honza/vim-snippets'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'tpope/vim-markdown'
 
+Plug 'leafgarland/typescript-vim'
+
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'preservim/tagbar'
 " Plug 'phaazon/hop.nvim'
