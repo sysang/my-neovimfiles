@@ -32,9 +32,8 @@ set hlsearch
 syntax on
 set termguicolors
 autocmd vimenter * hi Normal guibg=NONE ctermbg=None
-highlight Normal guibg=none
-highlight NonText guibg=none
-
+" highlight Normal guibg=none
+" highlight NonText guibg=none
 
 let g:indentLine_setConceal=0
 autocmd Filetype json setlocal conceallevel=0
@@ -52,7 +51,7 @@ let @f = ';.'
 
 nnoremap s <nop>
 let @s = "e."
-nnoremap s @ea
+nnoremap s ea
 
 nnoremap <C-j> <nop>
 inoremap <C-j> <nop>
@@ -108,6 +107,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'milkypostman/vim-togglelist'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate'}
 
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
@@ -117,8 +117,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
-Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'tpope/vim-markdown'
+Plug 'sbdchd/neoformat'
 
 Plug 'leafgarland/typescript-vim'
 
@@ -127,10 +127,12 @@ Plug 'preservim/tagbar'
 " Plug 'phaazon/hop.nvim'
 
 Plug 'morhetz/gruvbox'
-" Plug 'tribela/vim-transparent'
+Plug 'tribela/vim-transparent'
 call plug#end()
 
 colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_transparent_bg = 1
 
 " NERDTree settings
 nnoremap <F3> <nop>
@@ -143,7 +145,6 @@ let g:markdown_syntax_conceal = 0
 let g:markdown_fenced_languages = ['python']
 
 let g:NERDTreeMinimalUI = 1
-
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeHighlightCursorline = 1
 let g:NERDTreeCascadeOpenSingleChildDir = 0
@@ -218,3 +219,5 @@ if executable('jupytext')
 autocmd BufRead,BufNewFile *__2nb__.md :call Create_New_Ipynb()
 autocmd BufWritePost *__2nb__.md :call Sync_Markdown_Ipybn()
 endif
+
+
